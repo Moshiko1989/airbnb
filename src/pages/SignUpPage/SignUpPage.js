@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import UserService from '../../services/UserService'
 import { observable, action, computed , autorun } from 'mobx'
-import {inject , observer} from 'mobx-react'
 import './SignUpPage.css'
+import {inject , observer} from 'mobx-react'
 
 @inject('UserStore')
 @observer
