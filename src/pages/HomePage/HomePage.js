@@ -12,7 +12,13 @@ export class HomePage extends Component {
     state = {
         transform: {
             x: 0,
+<<<<<<< HEAD
             transform: "translateX("+ 0 + "px)"
+=======
+            style: {
+                transform: "translateX("+this.x+"px)"
+            }
+>>>>>>> 788195039df80bb6ae1d20f3fec057fef6c2455c
         }
     }
     doTransform = () => {
@@ -43,8 +49,8 @@ export class HomePage extends Component {
 
                 {/* <content className="gallery">
                     <h1>Places in Somewhere</h1>
-                    <button onClick={this.doTranform}> {'<'} </button>
-                    <section className="carousel" style={this.state.transform}>
+                    <button onClick={this.doTransform}> {'<'} </button>
+                    <section className="carousel" style={this.state.transform.style}>
                         {firstGall}
                     </section>
                     <button> {'>'} </button>
