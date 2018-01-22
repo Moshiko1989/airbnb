@@ -1,4 +1,4 @@
-import StorageService from './StorageService'
+import StorageService from '../services/StorageService'
 import uniqid from 'uniqid'
 const STORAGE_KEY = 'user';
 

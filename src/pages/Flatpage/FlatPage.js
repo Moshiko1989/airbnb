@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
+import {inject, observer} from 'mobx-react';
+// CSS
 import './FlatPage.css'
 
+// Services
+import FlatService from '../../services/FlatService'
 
+@inject('FlatStore')
+@observer
 export class FlatPage extends Component {
+
+    componentDidMount() {
+        FlatService.getFlats()
+    }
 
     render() {
         return (
