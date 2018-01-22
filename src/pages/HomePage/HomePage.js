@@ -10,25 +10,8 @@ import './HomePage.css'
 
 export class HomePage extends Component {
     state = {
-        transform: {
-            x: 0,
-<<<<<<< HEAD
-            transform: "translateX("+ 0 + "px)"
-=======
-            style: {
-                transform: "translateX("+this.x+"px)"
-            }
->>>>>>> 788195039df80bb6ae1d20f3fec057fef6c2455c
-        }
     }
-    doTransform = () => {
-        
-        let transform = {...this.state.transform} 
-        transform.x += 365;
-        console.log(transform)
-        this.setState({transform})
-        console.log(this.state)
-    }
+    
  
     render() {
         let imgs = [];
