@@ -1,0 +1,9 @@
+.main-home .gallery {
+  overflow: hidden; }
+  .main-home .gallery h1 {
+    text-align: left; }
+  .main-home .gallery .carousel {
+    width: 300vw; }
+    .main-home .gallery .carousel img {
+      margin: 0 .5%;
+      width: 9%; }

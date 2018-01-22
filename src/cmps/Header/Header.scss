@@ -1,0 +1,59 @@
+ @import '../../css/_vars.scss';
+
+
+.header {
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5vw;
+    // padding-right: 5vw;
+    box-shadow: 0 1px 5px rgba(0,0,0,.1);
+    height: 3vh;
+    .logo-container{
+        display: flex;
+        // align-items: center;
+        
+        .logo {
+            position: relative;
+            img{
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: -5px;
+            }
+            width: 3.5vw;
+            min-width:30px;
+        }
+        h2 {
+            // font-size: 3.5vw;
+            font-family: 'Open Sans',sans-serif;
+            margin: 0;
+            padding-left: .7vw
+        }
+    }
+    nav {
+        width: 12.5vw; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5vw;
+    }
+    pre {
+        font-family: $font-family-txt;
+        text-align: left;   
+    }
+    a {
+        width: 40%;
+    }
+}
+
+// header > * > *{
+//     border: 1px solid black;
+// }
+// header > *{
+//     border: 1px solid black;
+// } 
+
+// .header {
+//     background: #000;
+// }
