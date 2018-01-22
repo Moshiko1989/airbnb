@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import logo from '../../logo.png';
 import './Header.css';
-import { inject, observer } from 'mobx-react'
-
+// import { inject, observer } from 'mobx-react'
 
 // @inject('UserStore')
 // @observer

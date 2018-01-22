@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
-const FlatCard= (props) =>{
+// const FlatCard= (props) =>{
 
-        return(
-            <div className="flat-card">
-                {props.flat}
-            </div>
-        )
-}
+//         return(
+//             <div className="flat-card">
+//                 {props.flat}
+//             </div>
+//         )
+// }
 
-export default FlatCard
+// export default FlatCard
 

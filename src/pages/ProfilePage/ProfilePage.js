@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { observable, action, computed , autorun } from 'mobx'
+// import { observable, action, computed , autorun } from 'mobx'
 import FlatCard from '../../cmps/FlatCard/FlatCard'
 
 import {inject , observer} from 'mobx-react'

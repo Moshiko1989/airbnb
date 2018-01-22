@@ -1,4 +1,4 @@
-import { observable, action, computed , autorun } from 'mobx'
+import { observable, action, autorun } from 'mobx'
 import UserService from '../services/UserService'
 
 class UserStore {
@@ -18,5 +18,5 @@ class UserStore {
 
 
 
-const store = new UserStore
+const store = new UserStore()
 export default store;

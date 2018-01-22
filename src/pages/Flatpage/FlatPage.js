@@ -3,40 +3,34 @@ import {inject, observer} from 'mobx-react';
 // CSS
 import './FlatPage.css'
 
-// Services
-import FlatService from '../../services/FlatService'
-
 @inject('FlatStore')
 @observer
 export class FlatPage extends Component {
 
     componentDidMount() {
         var flatId = this.props.match.params.id;
-        console.log(flatId);
+        if (!this.props.FlatStore) return <h1>No content, sorry</h1>
+        this.props.FlatStore.loadFlatById(flatId)
     }
 
     render() {
-        // var id
-        // var flatId = FlatService.getFlatById()
+        
+        var flat = this.props.FlatStore.flatGetter;
+        if (!flat) return <h1>Sorry, flat is not available</h1>
+        console.log({flat});
+
         return (
             <section className="flat-info">
                 <div>
-                    <img className="flat-img" src={'/assets/img/1.jpg'}/>
+                    <img className="flat-img" src={flat.imgUrl} alt="flat"/>
                 </div>
                 <div>
-                    <h1>Flat Title</h1>
-                    <h3>Flat Address</h3>
+                    <h1>{flat.title}</h1>
+                    <h3>{flat.address}</h3>
                     <hr/>
                     <h4>About this listing</h4>
                     <div  className="flat-desc">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit 
-                        esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>{flat.desc}</p>
                     </div> 
                 </div>
                 <div className="amenities">
@@ -52,12 +46,12 @@ export class FlatPage extends Component {
                 </div>
                 <hr/>
                 <div className="flat-prices">
+                    <h2>Prices</h2>
                     <ul>
-                        <li>Prices</li>
-                        <li>Per night: 91$</li>
-                        <li>Weekly discount: 13%</li>
-                        <li>Extra people: 25$   </li>
-                        <li>Monthly discount: 28%</li>
+                        <li>Per night: {flat.prices.perNight}$</li>
+                        <li>Weekly discount: {flat.prices.weeklyDiscount}%</li>
+                        <li>Extra people: {flat.prices.extraPeople}$</li>
+                        <li>Monthly discount: {flat.prices.monthlyDiscount}%</li>
                     </ul>
                 </div>
                 <hr/>

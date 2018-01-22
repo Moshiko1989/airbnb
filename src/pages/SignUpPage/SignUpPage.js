@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserService from '../../services/UserService'
-import { observable, action, computed , autorun } from 'mobx'
+// import { observable, action, computed , autorun } from 'mobx'
 import './SignUpPage.css'
 import {inject , observer} from 'mobx-react'
 

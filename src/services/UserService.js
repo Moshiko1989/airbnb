@@ -16,7 +16,7 @@ function getEmptyUser() {
         name:'',
         bookedFlats:['111','11'],
         joined: Date.now(),
-        _id:uniqid() 
+        _id: uniqid() 
     }
 }
 
