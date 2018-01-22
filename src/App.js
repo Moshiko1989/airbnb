@@ -28,8 +28,8 @@ class App extends Component {
             <Header/>
             {tests}
             <Switch>
-              <Route path="/signup" render={(props) => <SignUpPage />}></Route>
-              <Route path="/login" render={(props) => <SignUpPage />}></Route>
+              <Route path="/signup" component={SignUpPage} />
+              <Route path="/login" component={SignUpPage} />
               <Route exact path="/flat" render={(props) => <FlatPage />}></Route>
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>

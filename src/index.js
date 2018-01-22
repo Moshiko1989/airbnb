@@ -7,10 +7,13 @@ import { Provider } from 'mobx-react';
 import FlatStore from './store/FlatStore'
 import UserStore from './store/UserStore'
 
-const store = {FlatStore }
-ReactDOM.render(
-    <Provider haim={'haim'} {...store}>
+const store = {FlatStore , UserStore }
+const Root = (
+    <Provider {...store}>
         <App />
     </Provider>
-    , document.getElementById('root'));
+);
+
+ReactDOM.render(Root, document.getElementById('root'));
 registerServiceWorker();
+

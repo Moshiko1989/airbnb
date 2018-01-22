@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import UserService from '../../services/UserService'
 import { observable, action, computed , autorun } from 'mobx'
+import {inject , observer} from 'mobx-react'
 import './SignUpPage.css'
 
-// @inject('UserStore')
-// @observer
+@inject('UserStore')
+@observer
 export class SignUpPage extends Component {
 
     state = {
-        logedIn: false,
+        toLogIn: false,
         newUser: UserService.getEmptyUser()
     }
 
     signUpUser = (ev) => {
         ev.preventDefault()
-        console.log(this.props)
         this.props.UserStore.setUser(this.state.newUser)
         this.props.history.push('/')
     }
@@ -30,11 +30,11 @@ export class SignUpPage extends Component {
 
     render() {
 // LOGIN PAGE
-        if (this.state.logedIn) {
+        if (!!this.state.toLogIn) {
             return (
                 <section className="signup-page">
                  <header className="signup-header">
-                    <h1>Login to React-Bnb</h1>
+                    <h1>Login to React-Bnb </h1>
                 </header>
                 <main className="signup-main">
                     <input type="text" placeholder="your username" />
