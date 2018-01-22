@@ -4,7 +4,7 @@ import { inject, observer } from 'mobx-react';
 
 
 import './HomePage.css'
-
+import 'bulma/css/bulma.css'
 // Services 
 
 
@@ -29,6 +29,7 @@ export class HomePage extends Component {
                         <h4>{flat.address}</h4>
                     </NavLink>
                 </li>
+                
             )
         })
         return (
