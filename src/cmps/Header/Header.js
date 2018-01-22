@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <header className="header">
 
-            <NavLink to="#" className="logo-container">
+            <NavLink to="/" className="logo-container">
                 <div className="logo">
                     <img src={logo} alt="logo" />
                 </div>
@@ -16,8 +16,8 @@ export const Header = () => {
             </NavLink>
 
             <nav>
-                <NavLink to="#"><pre>Log In</pre></NavLink>
-                <NavLink to="#"><pre>Register</pre></NavLink>
+                <NavLink to="/signup"><pre>Register</pre></NavLink>
+                <NavLink to="/login"><pre>Log In</pre></NavLink>
             </nav>
 
         </header>

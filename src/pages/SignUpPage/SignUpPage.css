@@ -1,0 +1,28 @@
+.signup-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 1px auto;
+    border: 1px solid black;
+    height: 90vh;;
+}
+
+.signup-header{
+    
+
+}
+
+.signup-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 13vw;
+    width: 100%;
+}
+
+
+.signup-footer{
+    
+}

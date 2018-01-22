@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
 //pages
 import { HomePage } from '../src/pages/HomePage/HomePage'
+import {SignUpPage} from './pages/SignUpPage/SignUpPage'
 //components
 import { Header } from './cmps/Header/Header'
 
@@ -20,7 +21,8 @@ class App extends Component {
           <div>
             <Header/>
             <Switch>
-              
+              <Route path="/signup" render={(props) => <SignUpPage />}></Route>
+              <Route path="/login" render={(props) => <SignUpPage />}></Route>
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
