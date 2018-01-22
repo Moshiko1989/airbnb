@@ -14,7 +14,7 @@ function saveUser(user) {
 function getEmptyUser() {
     return {
         name:'',
-        bookedVactiaions:[],
+        bookedFlats:['111','11'],
         joined: Date.now(),
         _id:uniqid() 
     }

@@ -22,5 +22,5 @@ class FlatObservableStore {
 }
 
 
-const FlatStore = new FlatObservableStore();
-export default FlatStore
+const FlastStore = new FlatObservableStore;
+export default FlastStore

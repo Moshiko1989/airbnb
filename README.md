@@ -2,13 +2,15 @@ This project was Created as  React App by [Moshkiko](https://github.com/Moshiko1
 [Naaman](https://github.com/nemo369) and [Nadav](https://github.com/Moshiko1989).
 
 For the demo click [here](#)<br>
+
 ## Table of Contents
 
-- [Web Tehcnlogis](#Web Tehcnlogiss)
+- [WEB TECHNOLOGIES](#WEB TECHNOLOGIES)
 
-## Web Tehcnlogis
+## WEB TECHNOLOGIES
 
-React-BnB App is dwas created using
+React-BnB App is was created using:
 
 * React
 * Mobx
+* ec6

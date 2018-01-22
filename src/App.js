@@ -9,12 +9,13 @@ import './App.css';
 import { HomePage } from '../src/pages/HomePage/HomePage'
 import {SignUpPage} from './pages/SignUpPage/SignUpPage'
 import { FlatPage } from '../src/pages/Flatpage/FlatPage'
+import { ProfilePage} from './pages/ProfilePage/ProfilePage'
 //components
 import { Header } from './cmps/Header/Header'
 
 import {inject} from 'mobx-react'
 
-@inject('FlatStore')
+@inject('FlatStore', 'UserStore')
 class App extends Component {
   componentDidMount (){
     this.props.FlatStore.loadFlats()
@@ -25,12 +26,13 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Header/>
+            <Header props={this.props}/>
             {tests}
             <Switch>
-              <Route path="/signup" render={(props) => <SignUpPage />}></Route>
-              <Route path="/login" render={(props) => <SignUpPage />}></Route>
               <Route exact path="/flat/:id" render={(props) => <FlatPage{...props} />}></Route>
+              <Route path="/signup" component={SignUpPage} />
+              <Route path="/login" component={SignUpPage} />
+              <Route path="/profile" component={ProfilePage} />
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
