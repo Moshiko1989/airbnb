@@ -24,7 +24,7 @@ export class HomePage extends Component {
             return (
                 <li key={flat.id} className="flat-preview">
                     <NavLink to={`/flat/${flat.id}`}>
-                        <img src={flat.img} alt="flat" />
+                        <img src={flat.imgUrl} alt="flat" />
                         <h2>{flat.title}</h2>
                         <h4>{flat.address}</h4>
                     </NavLink>
