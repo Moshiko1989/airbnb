@@ -10,10 +10,11 @@ import { HomePage } from '../src/pages/HomePage/HomePage'
 //components
 import { Header } from './cmps/Header/Header'
 
-
+import FlatService from './services/FlatService'
 
 class App extends Component {
   render() {
+    FlatService.getFlats().then(flats => console.log(flats))
     return (
       <div className="App">
         <Router>
@@ -21,7 +22,7 @@ class App extends Component {
             <Header/>
             <Switch>
               
-              <Route exact path="/home" render={(props) => <HomePage />}></Route>
+              <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
         </Router>

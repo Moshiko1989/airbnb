@@ -7,10 +7,12 @@ export class HomePage extends Component {
     state ={
         transform: {
             x: 0,
-            transform: "translateX("+0+"px)"
+            style: {
+                transform: "translateX("+this.x+"px)"
+            }
         }
     }
-    doTranform = () => {
+    doTransform = () => {
         
         let transform = {...this.state.transform} 
         transform.x += 365;
@@ -32,8 +34,8 @@ export class HomePage extends Component {
 
                 <content className="gallery">
                     <h1>Places in Somewhere</h1>
-                    <button onClick={this.doTranform}> {'<'} </button>
-                    <section className="carousel" style={this.state.transform}>
+                    <button onClick={this.doTransform}> {'<'} </button>
+                    <section className="carousel" style={this.state.transform.style}>
                         {firstGall}
                     </section>
                     <button> {'>'} </button>
