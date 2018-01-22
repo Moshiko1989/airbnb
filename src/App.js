@@ -27,11 +27,8 @@ class App extends Component {
             <Header/>
             {tests}
             <Switch>
-<<<<<<< HEAD
               <Route path="/signup" render={(props) => <SignUpPage />}></Route>
               <Route path="/login" render={(props) => <SignUpPage />}></Route>
-=======
->>>>>>> 788195039df80bb6ae1d20f3fec057fef6c2455c
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
