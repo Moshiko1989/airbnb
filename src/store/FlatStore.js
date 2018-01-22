@@ -4,10 +4,10 @@ import FlatService from '../services/FlatService'
 
 useStrict(true)
 
-class FlatStore {
+class FlatObservableStore {
 	@observable flats = [];
 
-	@computed get flats() {
+	@computed get flatsGetter() {
 		return this.flats
 	}
 
@@ -22,5 +22,5 @@ class FlatStore {
 }
 
 
-const FlatStore = new FlatStore();
+const FlatStore = new FlatObservableStore();
 export default FlatStore

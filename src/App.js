@@ -10,18 +10,22 @@ import { HomePage } from '../src/pages/HomePage/HomePage'
 //components
 import { Header } from './cmps/Header/Header'
 
-import FlatService from './services/FlatService'
+import {inject} from 'mobx-react'
 
+@inject('FlatStore')
 class App extends Component {
+  componentDidMount (){
+    this.props.FlatStore.loadFlats()
+  }
   render() {
-    FlatService.getFlats().then(flats => console.log(flats))
+    var tests = this.props.FlatStore.flatsGetter.map(flat => <p>{flat.id}</p>)
     return (
       <div className="App">
         <Router>
           <div>
             <Header/>
+            {tests}
             <Switch>
-              
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
