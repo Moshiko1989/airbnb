@@ -8,6 +8,7 @@ import './App.css';
 //pages
 import { HomePage } from '../src/pages/HomePage/HomePage'
 import {SignUpPage} from './pages/SignUpPage/SignUpPage'
+import { FlatPage } from '../src/pages/Flatpage/FlatPage'
 //components
 import { Header } from './cmps/Header/Header'
 
@@ -29,6 +30,7 @@ class App extends Component {
             <Switch>
               <Route path="/signup" render={(props) => <SignUpPage />}></Route>
               <Route path="/login" render={(props) => <SignUpPage />}></Route>
+              <Route exact path="/flat" render={(props) => <FlatPage />}></Route>
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>

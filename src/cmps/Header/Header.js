@@ -12,7 +12,7 @@ export const Header = () => {
                 <div className="logo">
                     <img src={logo} alt="logo" />
                 </div>
-                <h2>vuebnb</h2>
+                <h2>Reactbnb</h2>
             </NavLink>
 
             <nav>

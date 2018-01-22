@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+
 
 import './HomePage.css'
 
+ // Services 
+ 
+
 
 export class HomePage extends Component {
-    state ={
+    state = {
         transform: {
             x: 0,
+<<<<<<< HEAD
+            transform: "translateX("+ 0 + "px)"
+=======
             style: {
                 transform: "translateX("+this.x+"px)"
             }
+>>>>>>> 788195039df80bb6ae1d20f3fec057fef6c2455c
         }
     }
     doTransform = () => {
@@ -32,7 +41,13 @@ export class HomePage extends Component {
         return (
             <main className="main-home">
 
-                <content className="gallery">
+                <NavLink to="/flat" className="logo-container">
+                <div className="logo">
+                    <img src={`http://jsdojo.cachefly.net/vuebnb/images/10/Image_1_thumb.jpg`} alt="flat" />
+                </div>
+                </NavLink>
+
+                {/* <content className="gallery">
                     <h1>Places in Somewhere</h1>
                     <button onClick={this.doTransform}> {'<'} </button>
                     <section className="carousel" style={this.state.transform.style}>
@@ -57,9 +72,10 @@ export class HomePage extends Component {
                         {lastGall}
                     </section>
                     <button> {'>'} </button>
-                </content>
+                </content> */}
 
             </main>
         )
     }
 }
+
