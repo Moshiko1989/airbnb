@@ -11,18 +11,27 @@ import {SignUpPage} from './pages/SignUpPage/SignUpPage'
 //components
 import { Header } from './cmps/Header/Header'
 
+import {inject} from 'mobx-react'
 
-
+@inject('FlatStore')
 class App extends Component {
+  componentDidMount (){
+    this.props.FlatStore.loadFlats()
+  }
   render() {
+    var tests = this.props.FlatStore.flatsGetter.map(flat => <p>{flat.id}</p>)
     return (
       <div className="App">
         <Router>
           <div>
             <Header/>
+            {tests}
             <Switch>
+<<<<<<< HEAD
               <Route path="/signup" render={(props) => <SignUpPage />}></Route>
               <Route path="/login" render={(props) => <SignUpPage />}></Route>
+=======
+>>>>>>> 788195039df80bb6ae1d20f3fec057fef6c2455c
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>
