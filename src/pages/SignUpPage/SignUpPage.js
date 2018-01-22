@@ -15,8 +15,8 @@ export class SignUpPage extends Component {
     signUpUser = (ev) => {
         ev.preventDefault()
         console.log(this.props)
-        // this.props.UserStore.setUser(this.state.newUser)
-        // this.props.history.push('/')
+        this.props.UserStore.setUser(this.state.newUser)
+        this.props.history.push('/')
     }
 
     onInputChange(field) {
