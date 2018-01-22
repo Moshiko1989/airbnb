@@ -1,9 +1,13 @@
-.main-home .gallery {
-  overflow: hidden; }
-  .main-home .gallery h1 {
-    text-align: left; }
-  .main-home .gallery .carousel {
-    width: 300vw; }
-    .main-home .gallery .carousel img {
-      margin: 0 .5%;
-      width: 9%; }
+.main-home ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 95vw;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 2vh; }
+  .main-home ul .flat-preview {
+    width: 25vw; }
+
+.main-home img {
+  width: 100%; }

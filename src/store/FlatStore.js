@@ -1,4 +1,4 @@
-import { computed, observable, action, extendObservable, useStrict, autorun } from 'mobx';
+import { computed, observable, action, useStrict } from 'mobx';
 
 import FlatService from '../services/FlatService'
 

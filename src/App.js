@@ -30,7 +30,7 @@ class App extends Component {
             <Switch>
               <Route path="/signup" render={(props) => <SignUpPage />}></Route>
               <Route path="/login" render={(props) => <SignUpPage />}></Route>
-              <Route exact path="/flat" render={(props) => <FlatPage />}></Route>
+              <Route exact path="/flat/:id" render={(props) => <FlatPage{...props} />}></Route>
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
           </div>

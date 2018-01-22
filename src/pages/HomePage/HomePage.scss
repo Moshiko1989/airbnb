@@ -1,15 +1,18 @@
 .main-home {
-    .gallery {
-        overflow: hidden;
-        h1 {
-            text-align: left;
-        }
-        .carousel {
-            width: 300vw;
-            img {
-                margin: 0 .5%;
-                width: 9%;
-            }
-        }
+    ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap; 
+        max-width: 95vw;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: 2vh;
+
+        .flat-preview {
+            width: 25vw;
+        };
+    }
+    img {
+        width: 100%
     }
 }

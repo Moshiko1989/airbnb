@@ -11,10 +11,13 @@ import FlatService from '../../services/FlatService'
 export class FlatPage extends Component {
 
     componentDidMount() {
-        FlatService.getFlats()
+        var flatId = this.props.match.params.id;
+        console.log(flatId);
     }
 
     render() {
+        // var id
+        // var flatId = FlatService.getFlatById()
         return (
             <section className="flat-info">
                 <div>
