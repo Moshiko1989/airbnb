@@ -1,3 +1,8 @@
+import axios from 'axios'
+let URL = 'http://localhost:3003/data'
+if (process.env.NODE_ENV !== 'development') {
+    URL = ''
+}
 const flats = [];
 function generateFlats() {
     let id = 101
@@ -24,7 +29,13 @@ function generateFlats() {
 generateFlats()
 
 function getFlats() {
-    return Promise.resolve(flats)
+    // return Promise.resolve(flats)
+    return axios
+        .get(URL + '/flat')
+        .then(res => res.data)
+        .catch(e => {
+            throw e;
+        });
 }
 
 function getFlatById(id) {

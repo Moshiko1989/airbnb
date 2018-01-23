@@ -7,6 +7,7 @@ class UserStore {
 
     @action _setUser = (user) => {
         // UserService.saveUser(user)
+        console.log('user,',user)
         this.currUser = user
     }
 
@@ -23,8 +24,10 @@ class UserStore {
          UserService.clearUserFromStorage();
      }
      setUser = (user) => {
-         this.setUser(user)
+        
          UserService.saveUser(user)
+         .then(user =>{this._setUser(user)
+            console.log(user)})
      }
 }
 
