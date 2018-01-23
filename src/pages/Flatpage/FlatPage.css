@@ -5,23 +5,35 @@
   width: 70vw;
   text-align: center;
   margin: 0 auto; }
-
-.flat-desc {
-  text-align: left;
-  margin: 0 auto;
-  padding: 2vh 6vw; }
-
-.flat-img {
-  margin-top: 4vh;
-  width: 80vw;
-  height: 70vh;
-  max-width: 100%;
-  max-height: 100%;
-  cursor: pointer; }
-
-ul {
-  list-style: none; }
-
-.amenities .flat-prices {
-  display: flex;
-  flex-direction: row; }
+  .flat-info .flat-desc {
+    text-align: left;
+    margin: 0 auto;
+    padding: 2vh 6vw;
+    box-shadow: 0 3px 2px -2px #fd5c63;
+    padding-top: 1.5vh; }
+  .flat-info .flat-img {
+    margin-top: 4vh;
+    width: 80vw;
+    height: 70vh;
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer; }
+  .flat-info ul {
+    list-style: none; }
+  .flat-info .amenities, .flat-info .flat-prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vh; }
+    .flat-info .amenities h1, .flat-info .flat-prices h1 {
+      padding-left: .6vw; }
+  .flat-info .flat-prices {
+    height: 10vh; }
+  .flat-info hr {
+    background: #fd5c63;
+    border: 0.8px solid #fd5c63;
+    opacity: .45;
+    margin-bottom: 0; }
+  .flat-info .listing {
+    box-shadow: 0 -3px 2px -2px #fd5c63;
+    margin-top: 2vh;
+    padding-top: 1.5vh; }

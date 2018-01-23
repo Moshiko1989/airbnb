@@ -4,16 +4,28 @@ import UserService from '../services/UserService'
 class UserStore {
 
     @observable currUser = null
-    @action
-    setUser = (user) => {
-        UserService.saveUser(user)
+
+    @action _setUser = (user) => {
+        // UserService.saveUser(user)
         this.currUser = user
     }
+
     loadUser = autorun (() => {
         var user = UserService.loadUser()
         this.currUser = user
      })
 
+     @action _clearUser = () => {
+        this.currUser = null; 
+     }
+     clearUser = () => {
+         this._clearUser()
+         UserService.clearUserFromStorage();
+     }
+     setUser = (user) => {
+         this.setUser(user)
+         UserService.saveUser(user)
+     }
 }
 
 

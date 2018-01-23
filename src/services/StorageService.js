@@ -7,9 +7,13 @@ function save(key, val) {
     localStorage[key] = JSON.stringify(val);
 }
 
+function clear(key) {
+    localStorage[key] = null;
+}
+
 
 export default {
     load,
-    save
-
+    save,
+    clear
 }

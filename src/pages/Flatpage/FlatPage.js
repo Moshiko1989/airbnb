@@ -27,34 +27,43 @@ export class FlatPage extends Component {
                 <div>
                     <h1>{flat.title}</h1>
                     <h3>{flat.address}</h3>
-                    <hr/>
-                    <h4>About this listing</h4>
-                    <div  className="flat-desc">
+                    <h1 className="listing">About this listing</h1>
+                    <div className="flat-desc">
                         <p>{flat.desc}</p>
                     </div> 
                 </div>
                 <div className="amenities">
-                    <ul>
-                        <li>Amenities</li>
-                        <li>Wifi</li>
-                        <li>TV</li>
-                        <li>Breakfast</li>
-                        <li>Pets allowed</li>
-                        <li>Kitchen</li>
-                        <li>Laptop-friendly workplace</li>
-                    </ul>
+                    <div>
+                        <h1>Amenities</h1>
+                    </div>
+                    <div>
+                        <ul className="detail-list">
+                            <li>Wifi</li>
+                            <li>TV</li>
+                            <li>Breakfast</li>
+                        </ul>
+                    </div>
+                    
+                    <div className="detail-list">
+                        <ul>
+                            <li>Pets allowed</li>
+                            <li>Kitchen</li>
+                            <li>Laptop-friendly workplace</li>
+                        </ul>
+                    </div>
                 </div>
                 <hr/>
                 <div className="flat-prices">
-                    <h2>Prices</h2>
-                    <ul>
+                    <h1>Prices</h1>
+                    <ul className="detail-list">
                         <li>Per night: {flat.prices.perNight}$</li>
                         <li>Weekly discount: {flat.prices.weeklyDiscount}%</li>
+                    </ul>
+                    <ul>
                         <li>Extra people: {flat.prices.extraPeople}$</li>
                         <li>Monthly discount: {flat.prices.monthlyDiscount}%</li>
                     </ul>
                 </div>
-                <hr/>
             </section>
         );
     }

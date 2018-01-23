@@ -1,19 +1,23 @@
-//extentions
+// Extentions
 import React, { Component } from 'react';
-// import { Provider } from 'mobx-react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-//visual
-// import logo from './logo.png';
-import './App.css';
-//pages
-import { HomePage } from '../src/pages/HomePage/HomePage'
-import {SignUpPage} from './pages/SignUpPage/SignUpPage'
-import { FlatPage } from '../src/pages/Flatpage/FlatPage'
-import { ProfilePage} from './pages/ProfilePage/ProfilePage'
-//components
-import { Header } from './cmps/Header/Header'
+import {inject} from 'mobx-react';
 
-import {inject} from 'mobx-react'
+// Import { Provider } from 'mobx-react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// Visual
+import './App.css';
+
+// Pages
+import { HomePage } from '../src/pages/HomePage/HomePage';
+import {SignUpPage} from './pages/SignUpPage/SignUpPage';
+import { FlatPage } from '../src/pages/Flatpage/FlatPage';
+import { ProfilePage} from './pages/ProfilePage/ProfilePage';
+
+// Components
+import { Header } from './cmps/Header/Header';
+import { Footer} from './cmps/Footer/Footer';
+
 
 @inject('FlatStore', 'UserStore')
 class App extends Component {
@@ -35,6 +39,7 @@ class App extends Component {
               <Route path="/profile" component={ProfilePage} />
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
+            <Footer/>
           </div>
         </Router>
       </div >

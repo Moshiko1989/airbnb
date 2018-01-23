@@ -1,59 +1,61 @@
  @import '../../css/_vars.scss';
 
-
 .header {
-    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
-    padding: 1.5vw;
-    // padding-right: 5vw;
-    box-shadow: 0 1px 5px rgba(0,0,0,.1);
-    height: 3vh;
-    .logo-container{
+    width: 95vw;
+    margin: 0 auto;
+    // border-bottom: 1px solid $secondary-color;
+    // box-shadow: 0 0px 5px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 2px -2px $secondary-color;
+
+    pre {
+        background: none;
+        padding: 0;
+    }
+    
+    .logo-container {
         display: flex;
-        // align-items: center;
+        align-self: center;
+
+        pre {
+            color: $secondary-color;
+        }
         
         .logo {
-            position: relative;
-            img{
-                width: 100%;
-                position: absolute;
-                left: 0;
-                top: -5px;
+            width: 60px;
+            padding: 1vh 1vw;
+
+            img {
+                width: 100%
             }
-            width: 3.5vw;
-            min-width:30px;
-        }
-        h2 {
-            // font-size: 3.5vw;
-            font-family: 'Open Sans',sans-serif;
-            margin: 0;
-            padding-left: .7vw
         }
     }
+
+    h2 {
+        align-self: center;
+    }
+
     nav {
-        width: 12.5vw; 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-right: 5vw;
+        align-self: center;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+        }
+        pre {
+            font-family: $font-family-txt;
+            margin: 1vw;
+        }
     }
-    pre {
-        font-family: $font-family-txt;
-        text-align: left;   
-    }
-    a {
-        width: 40%;
-    }
+
+}
+    @media screen and (max-width: 540px ) {
+        .header {
+            .welcome {
+                display: none;
+            }
+        }
+
 }
 
-// header > * > *{
-//     border: 1px solid black;
-// }
-// header > *{
-//     border: 1px solid black;
-// } 
-
-// .header {
-//     background: #000;
-// }

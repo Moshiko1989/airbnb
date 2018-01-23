@@ -20,8 +20,13 @@ function getEmptyUser() {
     }
 }
 
+function clearUserFromStorage() {
+    StorageService.clear(STORAGE_KEY)
+}
+
 export default {
     loadUser,
     saveUser,
     getEmptyUser,
+    clearUserFromStorage
 }

@@ -8,25 +8,45 @@ import './Header.css';
 // @inject('UserStore')
 // @observer
 export const Header = (props) => {
-    const currUser = props.props.UserStore.currUser
+    const userStore = props.props.UserStore;
+    const currUser = userStore.currUser
+
+    function clearUser() {
+        userStore.clearUser()
+    }
+
     return (
         <header className="header">
-
             <NavLink to="/" className="logo-container">
                 <div className="logo">
                     <img src={logo} alt="logo" />
                 </div>
-                <h2>Reactbnb</h2>
+                <h2><pre>React-bnb</pre></h2>
             </NavLink>
-                <span> welcome {currUser.name}</span>
-            {!!currUser ?
-                (<nav><NavLink to="/login"><pre>Log Out</pre></NavLink>
-                    <NavLink to="/profile"><pre>profile</pre></NavLink> </nav>
-                ) : (<nav>
-                    <NavLink to="/login"><pre>Register</pre></NavLink>
-                    <NavLink to="/login"><pre>Log In</pre></NavLink>
-                </nav>
-                )}
+            <h2 className="welcome"> Welcome {currUser ? currUser.name : ' Guest'}</h2>
+            <nav>
+                {!!currUser ?
+                    (
+                        <ul>
+                            <li>
+                                <NavLink onClick={clearUser} to="/login"><pre>Log Out</pre></NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/profile"><pre>Profile</pre></NavLink>
+                            </li>
+                        </ul>
+                    ) : (
+                        <ul>
+                            <li>
+                                <NavLink to="/login"><pre>Register</pre></NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/login"><pre>Log In</pre></NavLink>
+                            </li>
+                        </ul>
+                    )}
+            </nav>
         </header>
     )
 }
+
