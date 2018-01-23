@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {inject, observer} from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 // CSS
 import './FlatPage.css'
 
@@ -14,15 +14,15 @@ export class FlatPage extends Component {
     }
 
     render() {
-        
+
         var flat = this.props.FlatStore.flatGetter;
         if (!flat) return <h1>Sorry, flat is not available</h1>
-        console.log({flat});
+        console.log({ flat });
 
         return (
             <section className="flat-info">
                 <div>
-                    <img className="flat-img" src={flat.imgUrl} alt="flat"/>
+                    <img className="flat-img" src={flat.imgUrl} alt="flat" />
                 </div>
                 <div>
                     <h1>{flat.title}</h1>
@@ -30,39 +30,44 @@ export class FlatPage extends Component {
                     <h1 className="listing">About this listing</h1>
                     <div className="flat-desc">
                         <p>{flat.desc}</p>
-                    </div> 
+                    </div>
                 </div>
                 <div className="amenities">
-                    <div>
-                        <h1>Amenities</h1>
-                    </div>
-                    <div>
-                        <ul className="detail-list">
-                            <li>Wifi</li>
-                            <li>TV</li>
-                            <li>Breakfast</li>
-                        </ul>
-                    </div>
+              
+                        <h1 className="align-left">Amenities</h1>
                     
-                    <div className="detail-list">
-                        <ul>
-                            <li>Pets allowed</li>
-                            <li>Kitchen</li>
-                            <li>Laptop-friendly workplace</li>
+                   
+                        <ul className="detail-list">
+                            <li><i className="fa fa-wifi" aria-hidden="true"></i><span> Wifi</span></li>
+                            <li><i className="fa fa-television" aria-hidden="true"></i><span> TV</span></li>
+                            <li><i className="fa fa-coffee" aria-hidden="true"></i><span> Breakfast</span></li>
                         </ul>
-                    </div>
+                   
+
+                  
+                        <ul className="detail-list">
+                            <li><i className="fa fa-paw" aria-hidden="true"></i><span> Pets allowed</span></li>
+                            <li><i className="fa fa-cutlery" aria-hidden="true"></i><span> Kitchen</span></li>
+                            <li><i className="fa fa-laptop" aria-hidden="true"></i><span> Laptop-friendly workplace</span></li>
+                        </ul>
+                 
                 </div>
-                <hr/>
+                <hr />
                 <div className="flat-prices">
-                    <h1>Prices</h1>
-                    <ul className="detail-list">
-                        <li>Per night: {flat.prices.perNight}$</li>
-                        <li>Weekly discount: {flat.prices.weeklyDiscount}%</li>
-                    </ul>
-                    <ul>
-                        <li>Extra people: {flat.prices.extraPeople}$</li>
-                        <li>Monthly discount: {flat.prices.monthlyDiscount}%</li>
-                    </ul>
+                
+                    <h1 className="align-left">Prices</h1>
+                  
+                        <ul className="detail-list">
+                            <li>Per night: <span> {flat.prices.perNight}$</span></li>
+                            <li>Weekly discount: <span> {flat.prices.weeklyDiscount}%</span></li>
+                        </ul>
+                   
+                 
+                        <ul className="detail-list">
+                            <li>Extra people: <span> {flat.prices.extraPeople}$</span></li>
+                            <li>Monthly discount: <span> {flat.prices.monthlyDiscount}%</span></li>
+                        </ul>
+                  
                 </div>
             </section>
         );

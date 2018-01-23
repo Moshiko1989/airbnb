@@ -5,6 +5,8 @@
   width: 70vw;
   text-align: center;
   margin: 0 auto; }
+  .flat-info li, .flat-info li > span, .flat-info .align-left {
+    text-align: left; }
   .flat-info .flat-desc {
     text-align: left;
     margin: 0 auto;
@@ -19,13 +21,15 @@
     max-height: 100%;
     cursor: pointer; }
   .flat-info ul {
-    list-style: none; }
+    list-style: none;
+    width: 30%; }
   .flat-info .amenities, .flat-info .flat-prices {
     display: flex;
     justify-content: space-between;
     margin-top: 2vh; }
     .flat-info .amenities h1, .flat-info .flat-prices h1 {
-      padding-left: .6vw; }
+      padding-left: .6vw;
+      width: 30%; }
   .flat-info .flat-prices {
     height: 10vh; }
   .flat-info hr {
