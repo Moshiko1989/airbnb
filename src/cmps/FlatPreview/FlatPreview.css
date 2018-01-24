@@ -1,0 +1,20 @@
+.flat-preview {
+  width: 25vw;
+  min-width: 320px;
+  position: relative; }
+  .flat-preview a {
+    color: black; }
+  .flat-preview .img-container img {
+    height: 60%;
+    width: 100%; }
+  .flat-preview .flat-txt-container {
+    display: flex;
+    flex-direction: column;
+    height: 20%; }
+    .flat-preview .flat-txt-container .flat-txt {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 35%;
+      width: 100%; }
+  .flat-preview a:hover {
+    color: #fd5c63; }

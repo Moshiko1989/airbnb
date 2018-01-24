@@ -13,7 +13,11 @@
         background: none;
         padding: 0;
     }
-    
+    pre:hover {
+        
+            color: $secondary-color;
+        
+    }
     .logo-container {
         display: flex;
         align-self: center;
@@ -50,7 +54,7 @@
     }
 
 }
-    @media screen and (max-width: 540px ) {
+@media screen and (max-width: 540px ) {
         .header {
             .welcome {
                 display: none;

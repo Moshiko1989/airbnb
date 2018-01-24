@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Visual
 import './App.css';
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
 // Pages
 import { HomePage } from '../src/pages/HomePage/HomePage';

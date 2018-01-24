@@ -21,7 +21,7 @@ export class FlatPage extends Component {
 
         return (
             <section className="flat-info">
-                <div>
+                <div className="img-container">
                     <img className="flat-img" src={flat.imgUrl} alt="flat" />
                 </div>
                 <div>
@@ -59,12 +59,12 @@ export class FlatPage extends Component {
                   
                         <ul className="detail-list">
                             <li>Per night: <span> {flat.prices.perNight}$</span></li>
-                            <li>Weekly discount: <span> {flat.prices.weeklyDiscount}%</span></li>
+                            <li>Extra people: <span> {flat.prices.extraPeople}$</span></li>
                         </ul>
                    
                  
                         <ul className="detail-list">
-                            <li>Extra people: <span> {flat.prices.extraPeople}$</span></li>
+                            <li>Weekly discount: <span> {flat.prices.weeklyDiscount}%</span></li>
                             <li>Monthly discount: <span> {flat.prices.monthlyDiscount}%</span></li>
                         </ul>
                   

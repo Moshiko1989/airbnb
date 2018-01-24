@@ -26,8 +26,9 @@ class UserStore {
      setUser = (user) => {
         
          UserService.saveUser(user)
-         .then(user =>{this._setUser(user)
-            console.log(user)})
+         this._setUser(user)
+        //  .then(user =>{this._setUser(user)
+        //     console.log(user)})
      }
 }
 

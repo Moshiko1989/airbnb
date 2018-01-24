@@ -1,0 +1,30 @@
+@import '../../css/_vars.scss';
+.flat-preview {
+    width: 25vw;
+    min-width: 320px;
+    position: relative;
+    a {
+        color: black;
+    }
+    .img-container {
+        img {
+            height: 60%;
+            width: 100%;
+        }
+    }
+    .flat-txt-container {
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+
+        .flat-txt {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 35%;
+            width: 100%;
+        }
+    }
+    a:hover {
+        color: $secondary-color;
+    }
+}
