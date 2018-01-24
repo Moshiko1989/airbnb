@@ -1,17 +1,20 @@
+// Extentions
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import './FlatPreview.css'
+// Styles
+import 'bulma/css/bulma.css';
+import './FlatPreview.css';
 
 export const FlatPreview = (props) => {
-    console.log()
     return (
         <li className="flat-preview">
+            <div className="heart">
+                <button><i className="fa fa-heart" aria-hidden="true" ></i></button>
+                <button><i className="fa fa-heart-o" aria-hidden="true"></i></button>
+                {/* <i className="fa fa-heart" aria-hidden="true" ></i> */}
 
-            {/* <i onClick={this.toggleLike} className="fa fa-heart" aria-hidden="true" style={{ display: 'none' }}></i> */}
-
-            {/* <i onClick={this.toggleLike} className="fa fa-heart-o"aria-hidden="true"></i> */}
-
+                {/* <i className="fa fa-heart-o" aria-hidden="true"></i> */}
+            </div>
             <NavLink to={`/flat/${props.flat.id}`}>
                 {/* <NavLink to='#'> */}
                 <aside className="img-container">

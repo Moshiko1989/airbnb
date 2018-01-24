@@ -1,14 +1,19 @@
-import { observable, action, autorun } from 'mobx'
+import { computed, observable, action, autorun } from 'mobx'
 import UserService from '../services/UserService'
 
 class UserStore {
 
     @observable currUser = null
 
+    @computed get currUserGetter() {
+        // console.log('computing user')
+        return this.currUser;
+    }
+
     @action _setUser = (user) => {
         // UserService.saveUser(user)
-        console.log('user,',user)
         this.currUser = user
+        // console.log('currUser,',this.currUser)
     }
 
     loadUser = autorun (() => {
@@ -24,9 +29,10 @@ class UserStore {
          UserService.clearUserFromStorage();
      }
      setUser = (user) => {
-        
+        // console.log({user})
          UserService.saveUser(user)
-         this._setUser(user)
+            .then(this._setUser)
+        //  this._setUser(user)
         //  .then(user =>{this._setUser(user)
         //     console.log(user)})
      }

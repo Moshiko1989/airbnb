@@ -1,6 +1,6 @@
 // Extentions
 import React, { Component } from 'react';
-import {inject} from 'mobx-react';
+import { inject } from 'mobx-react';
 
 // Import { Provider } from 'mobx-react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -11,18 +11,19 @@ import './App.css';
 
 // Pages
 import { HomePage } from '../src/pages/HomePage/HomePage';
-import {SignUpPage} from './pages/SignUpPage/SignUpPage';
+import { SignUpPage } from './pages/SignUpPage/SignUpPage';
 import { FlatPage } from '../src/pages/Flatpage/FlatPage';
-import { ProfilePage} from './pages/ProfilePage/ProfilePage';
+import { ProfilePage } from './pages/ProfilePage/ProfilePage';
+import { Register } from './pages/Register/Register';
 
 // Components
 import { Header } from './cmps/Header/Header';
-import { Footer} from './cmps/Footer/Footer';
+import { Footer } from './cmps/Footer/Footer';
 
 
 @inject('FlatStore', 'UserStore')
 class App extends Component {
-  componentDidMount (){
+  componentDidMount() {
     this.props.FlatStore.loadFlats()
   }
   render() {
@@ -31,16 +32,16 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Header props={this.props}/>
+            <Header props={this.props} />
             {tests}
             <Switch>
               <Route exact path="/flat/:id" render={(props) => <FlatPage{...props} />}></Route>
-              <Route path="/signup" component={SignUpPage} />
+              <Route path="/signup" component={Register} />
               <Route path="/login" component={SignUpPage} />
               <Route path="/profile" component={ProfilePage} />
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
-            <Footer/>
+            <Footer />
           </div>
         </Router>
       </div >

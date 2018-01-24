@@ -1,15 +1,31 @@
 .flat-preview {
+  background-color: white;
   width: 25vw;
   min-width: 320px;
-  position: relative; }
+  margin: 1%;
+  position: relative;
+  box-shadow: 0px 0px 1.5px 0px #fd5c63;
+  border-radius: 0 10% 10%;
+  overflow: hidden; }
+  .flat-preview .heart {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    border: 1px solid black; }
+    .flat-preview .heart .fa {
+      position: absolute;
+      left: 5%;
+      top: 5%; }
   .flat-preview a {
-    color: black; }
+    color: #fd5c63; }
   .flat-preview .img-container img {
+    border-radius: 0  10% 0 0;
     height: 60%;
     width: 100%; }
   .flat-preview .flat-txt-container {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     height: 20%; }
     .flat-preview .flat-txt-container .flat-txt {
       overflow: hidden;
@@ -17,4 +33,7 @@
       height: 35%;
       width: 100%; }
   .flat-preview a:hover {
-    color: #fd5c63; }
+    color: black; }
+
+.flat-preview:hover {
+  opacity: .7; }
