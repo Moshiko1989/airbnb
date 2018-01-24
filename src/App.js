@@ -11,10 +11,11 @@ import './App.css';
 
 // Pages
 import { HomePage } from '../src/pages/HomePage/HomePage';
-import { SignUpPage } from './pages/SignUpPage/SignUpPage';
+// import { SignUpPage } from './pages/SignUpPage/SignUpPage';
+import { Login } from './pages/Login/Login';
+import { Register } from './pages/Register/Register';
 import { FlatPage } from '../src/pages/Flatpage/FlatPage';
 import { ProfilePage } from './pages/ProfilePage/ProfilePage';
-import { Register } from './pages/Register/Register';
 
 // Components
 import { Header } from './cmps/Header/Header';
@@ -35,9 +36,9 @@ class App extends Component {
             <Header props={this.props} />
             {tests}
             <Switch>
-              <Route exact path="/flat/:id" render={(props) => <FlatPage{...props} />}></Route>
+              <Route exact path="/flat/:id" render={(props) => <FlatPage {...props} />}></Route>
               <Route path="/signup" component={Register} />
-              <Route path="/login" component={SignUpPage} />
+              <Route path="/login" component={Login} />
               <Route path="/profile" component={ProfilePage} />
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>

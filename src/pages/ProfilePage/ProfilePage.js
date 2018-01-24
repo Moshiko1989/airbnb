@@ -10,6 +10,7 @@ export class ProfilePage extends Component {
 
     render(){
         const {currUserGetter} = this.props.UserStore
+        if (!currUserGetter) return <div>Sorry, no user yet</div>
         return(
             <section>
                 <h1>{currUserGetter.name.toUpperCase()} PROFILE</h1>

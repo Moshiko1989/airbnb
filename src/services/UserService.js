@@ -9,9 +9,24 @@ import StorageService from '../services/StorageService'
 
 const STORAGE_KEY = 'user';
 
-function loadUser() {
+function loadPrevUser() {
     var user = StorageService.load(STORAGE_KEY)
-    return user
+    return new Promise ((res, rej) => {
+        setTimeout(() => {
+            res(user)
+        }, 250)
+    }) 
+}
+
+function loadUser(credentials) {
+    return new Promise ((res, rej) => {
+        setTimeout(()=> {
+            res({
+                name: 'mok user from server',
+                bookedFlats: [],
+            })
+        }, 250)
+    })
 }
 
 function saveUser(user) {
@@ -44,6 +59,8 @@ function clearUserFromStorage() {
 }
 
 export default {
+    STORAGE_KEY,
+    loadPrevUser,
     loadUser,
     saveUser,
     getEmptyUser,
