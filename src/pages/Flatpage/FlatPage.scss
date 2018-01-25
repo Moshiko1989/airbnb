@@ -10,20 +10,7 @@
     li, li > span,  .align-left{
         text-align: left;  
     }
-    li {
-        // text-align: left;
-        // display: flex;
-        // justify-content: flex-start;
-        .fa {
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            // padding-right: 1vw;
-        }
-        span{
-            // text-align: left;
-        }
-    }
+
     .flat-desc {
         text-align: left;
         margin: 0 auto;
@@ -70,12 +57,5 @@
         box-shadow: 0 -3px 2px -2px $secondary-color;
         margin-top: 2vh;
         padding-top: 1.5vh;
-    }
-
-    .flat-prices {
-        // span {
-        //     padding-left: .4vw;
-        //     font-weight: 700
-        // }
     }
 }
