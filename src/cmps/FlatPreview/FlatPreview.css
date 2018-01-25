@@ -32,7 +32,6 @@
     .flat-preview .flat-txt-container .flat-txt {
       overflow: hidden;
       text-overflow: ellipsis;
-      height: 35%;
       width: 100%;
       white-space: nowrap; }
   .flat-preview a:hover {

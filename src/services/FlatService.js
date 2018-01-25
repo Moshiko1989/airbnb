@@ -21,7 +21,7 @@ function generateFlats() {
                 extraPeople: 20,
                 monthlyDiscount: 25,
             },
-            userLikedIds: id % 2  ? 'mock id' : null
+            userLikedIds: id % 2  ? null : 'mock id'
 
         })
         id++

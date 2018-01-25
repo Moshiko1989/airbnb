@@ -12,7 +12,7 @@ import { FlatPreview } from '../../cmps/FlatPreview/FlatPreview';
 @observer
 export class HomePage extends Component {
     componentWillMount() {
-        console.log(this.props.history)
+        // console.log(this.props.history)
         this.props.FlatStore.loadFlats();
     }
     render() {
@@ -22,8 +22,7 @@ export class HomePage extends Component {
                     {
                         this.props.FlatStore.flatsGetter.map((flat) => {
                             return <FlatPreview key={flat.id} flat={flat}
-                                        history={this.props.history}
-                                        UserStore={this.props.UserStore} />
+                                        history={this.props.history}/>                                  
                         })
                     }
                 </ul>

@@ -13,7 +13,11 @@ class UserStore {
     @action _setUser = (user) => {
         // UserService.saveUser(user)
         this.currUser = user
-        console.log('currUser,',this.currUser)
+        console.log('currUser,', this.currUser)
+    }
+
+    @action _addLike = (flatId) => {
+        this.currUser.likedFlatsIds.push(flatId)
     }
 
      @action _clearUser = () => {
@@ -25,7 +29,7 @@ class UserStore {
          UserService.clearUserFromStorage();
      }
      setUser = (user) => {
-        // console.log({user})
+        console.log({user})
          UserService.saveUser(user)
             .then(this._setUser)
         //  this._setUser(user)
@@ -40,13 +44,14 @@ class UserStore {
         .then(this._setUser)
      }
 
-     toggleLike = (id) => {
-        UserService.toggleLike(this.currUser, id)
+     toggleLike = (flatId) => {
+        this._addLike(flatId)
+        UserService.toggleLike(this.currUser, flatId)
             .then(this._setUser);
      }
 
      _loadUser = autorun (() => {
-         console.log('autorun ran... _loadUser ran')
+        //  console.log('autorun ran... _loadUser ran')
         UserService.loadPrevUser()
         .then(this._setUser)
      })

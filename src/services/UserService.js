@@ -22,9 +22,9 @@ function loadUser(credentials) {
     return new Promise ((res, rej) => {
         setTimeout(()=> {
             res({
-                name: ' user from server',
+                name: 'mock user from server',
                 bookedFlats: [],
-                likedFlatsIds: []
+                likedFlatsIds: [],
             })
         }, 250)
     })
@@ -51,9 +51,9 @@ function getEmptyUser() {
     return {
         id: 'mock id',
         name: 'test name',
+        likedFlatsIds: [],
         bookedFlats: [],
         joined: Date.now(),
-        likedFlatsIds: []
     }
 }
 
@@ -64,8 +64,9 @@ function clearUserFromStorage() {
 function toggleLike(user, id) {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            user.likedFlatsIds.push(id);
-            res(user);
+            var newUser = JSON.parse(JSON.stringify(user))
+            newUser.likedFlatsIds.push(id);
+            res(newUser);
         }, 1000);
     })
 }
