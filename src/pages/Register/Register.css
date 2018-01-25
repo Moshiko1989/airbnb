@@ -1,0 +1,27 @@
+.register {
+  width: 50vw;
+  height: 60vh;
+  border: 1px solid #fd5c63;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .register input, .register button {
+    margin: 2vh auto;
+    width: 50%; }
+  .register input {
+    padding: 1em;
+    border: none;
+    border-bottom: 1px solid #fd5c63;
+    font-family: Helvetica, sans-serif;
+    background: #F6F4F4; }
+  .register .button, .register .is-link {
+    background-color: #fd5c63; }
+  .register .button:hover, .register .is-link:hover {
+    background-color: red; }
+  .register input:focus {
+    outline-color: #fd5c63; }
+
+@media screen and (max-width: 540px) {
+  .register {
+    width: 90vw; } }

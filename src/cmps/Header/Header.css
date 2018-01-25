@@ -7,6 +7,8 @@
   .header pre {
     background: none;
     padding: 0; }
+  .header pre:hover {
+    color: #fd5c63; }
   .header .logo-container {
     display: flex;
     align-self: center; }

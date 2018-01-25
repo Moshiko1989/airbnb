@@ -9,13 +9,14 @@ import {inject , observer} from 'mobx-react'
 export class ProfilePage extends Component {
 
     render(){
-        const {currUser} = this.props.UserStore
+        const {currUserGetter} = this.props.UserStore
+        if (!currUserGetter) return <div>Sorry, no user yet</div>
         return(
             <section>
-                <h1>{currUser.name.toUpperCase()} PROFILE</h1>
+                <h1>{currUserGetter.name.toUpperCase()} PROFILE</h1>
                 <div>
                     <h2>Saved listings</h2>
-                    { currUser.bookedFlats.map(flat =>{
+                    { currUserGetter.bookedFlats.map(flat =>{
                         return <FlatCard flat={flat}/>
                     })
                     }

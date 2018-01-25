@@ -1,28 +1,30 @@
 // Extentions
 import React, { Component } from 'react';
-import {inject} from 'mobx-react';
+import { inject } from 'mobx-react';
 
 // Import { Provider } from 'mobx-react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Visual
 import './App.css';
-import {Icon} from 'react-fa'
+// import {Icon} from 'react-fa'
 
 // Pages
 import { HomePage } from '../src/pages/HomePage/HomePage';
-import {SignUpPage} from './pages/SignUpPage/SignUpPage';
+// import { SignUpPage } from './pages/SignUpPage/SignUpPage';
+import { Login } from './pages/Login/Login';
+import { Register } from './pages/Register/Register';
 import { FlatPage } from '../src/pages/Flatpage/FlatPage';
-import { ProfilePage} from './pages/ProfilePage/ProfilePage';
+import { ProfilePage } from './pages/ProfilePage/ProfilePage';
 
 // Components
 import { Header } from './cmps/Header/Header';
-import { Footer} from './cmps/Footer/Footer';
+import { Footer } from './cmps/Footer/Footer';
 
 
 @inject('FlatStore', 'UserStore')
 class App extends Component {
-  componentDidMount (){
+  componentDidMount() {
     this.props.FlatStore.loadFlats()
   }
   render() {
@@ -31,16 +33,16 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <Header props={this.props}/>
+            <Header props={this.props} />
             {tests}
             <Switch>
-              <Route exact path="/flat/:id" render={(props) => <FlatPage{...props} />}></Route>
-              <Route path="/signup" component={SignUpPage} />
-              <Route path="/login" component={SignUpPage} />
+              <Route exact path="/flat/:id" render={(props) => <FlatPage {...props} />}></Route>
+              <Route path="/signup" component={Register} />
+              <Route path="/login" component={Login} />
               <Route path="/profile" component={ProfilePage} />
               <Route exact path="/" render={(props) => <HomePage />}></Route>
             </Switch>
-            <Footer/>
+            <Footer />
           </div>
         </Router>
       </div >
