@@ -1,11 +1,13 @@
 .register {
   width: 50vw;
   height: 60vh;
-  border: 1px solid #fd5c63;
   margin: 10vh auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  box-shadow: 0px 0px 9.5px -2px grey;
+  border: 1px solid transparent;
+  transition: all .6s; }
   .register input, .register button {
     margin: 2vh auto;
     width: 50%; }
@@ -21,6 +23,10 @@
     background-color: red; }
   .register input:focus {
     outline-color: #fd5c63; }
+
+.register:hover {
+  box-shadow: 0;
+  border: 1px solid #fd5c63; }
 
 @media screen and (max-width: 540px) {
   .register {

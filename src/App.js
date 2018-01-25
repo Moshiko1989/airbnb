@@ -35,13 +35,15 @@ class App extends Component {
           <div>
             <Header props={this.props} />
             {tests}
-            <Switch>
-              <Route exact path="/flat/:id" render={(props) => <FlatPage {...props} />}></Route>
-              <Route path="/signup" component={Register} />
-              <Route path="/login" component={Login} />
-              <Route path="/profile" component={ProfilePage} />
-              <Route exact path="/" render={(props) => <HomePage />}></Route>
-            </Switch>
+            {/* <div className="switch"> */}
+              <Switch className="switch">
+                <Route exact path="/flat/:id" render={(props) => <FlatPage {...props} />}></Route>
+                <Route path="/signup" component={Register} />
+                <Route path="/login" component={Login} />
+                <Route path="/profile" component={ProfilePage} />
+                <Route exact path="/" render={(props) => <HomePage {...props} />}></Route>
+              </Switch>
+            {/* </div> */}
             <Footer />
           </div>
         </Router>

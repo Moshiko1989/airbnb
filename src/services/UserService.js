@@ -22,8 +22,9 @@ function loadUser(credentials) {
     return new Promise ((res, rej) => {
         setTimeout(()=> {
             res({
-                name: 'mok user from server',
+                name: ' user from server',
                 bookedFlats: [],
+                likedFlatsIds: []
             })
         }, 250)
     })
@@ -48,14 +49,25 @@ function saveUser(user) {
 
 function getEmptyUser() {
     return {
+        id: 'mock id',
         name: 'test name',
         bookedFlats: [],
         joined: Date.now(),
+        likedFlatsIds: []
     }
 }
 
 function clearUserFromStorage() {
     StorageService.clear(STORAGE_KEY)
+}
+
+function toggleLike(user, id) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            user.likedFlatsIds.push(id);
+            res(user);
+        }, 1000);
+    })
 }
 
 export default {
@@ -64,5 +76,6 @@ export default {
     loadUser,
     saveUser,
     getEmptyUser,
-    clearUserFromStorage
+    clearUserFromStorage,
+    toggleLike
 }

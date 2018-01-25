@@ -1,6 +1,16 @@
+/* body {
+  height: 100%;
+  width: 100vw;
+} */
+
 .App {
   text-align: center;
+  /* position: relative; */
 }
+
+/* .switch {
+  padding-bottom: 20px;
+}  */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

@@ -8,10 +8,11 @@ import './HomePage.css';
 // Components
 import { FlatPreview } from '../../cmps/FlatPreview/FlatPreview';
 
-@inject('FlatStore')
+@inject('FlatStore', 'UserStore')
 @observer
 export class HomePage extends Component {
     componentWillMount() {
+        console.log(this.props.history)
         this.props.FlatStore.loadFlats();
     }
     render() {
@@ -20,7 +21,9 @@ export class HomePage extends Component {
                 <ul>
                     {
                         this.props.FlatStore.flatsGetter.map((flat) => {
-                            return <FlatPreview key={flat.id} flat={flat} />
+                            return <FlatPreview key={flat.id} flat={flat}
+                                        history={this.props.history}
+                                        UserStore={this.props.UserStore} />
                         })
                     }
                 </ul>

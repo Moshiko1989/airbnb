@@ -40,11 +40,18 @@ class UserStore {
         .then(this._setUser)
      }
 
+     toggleLike = (id) => {
+        UserService.toggleLike(this.currUser, id)
+            .then(this._setUser);
+     }
+
      _loadUser = autorun (() => {
          console.log('autorun ran... _loadUser ran')
         UserService.loadPrevUser()
         .then(this._setUser)
      })
+
+
 
     //  _loadUser = autorun (() => {
     //     var user = UserService.loadUser()
