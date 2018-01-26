@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import { NavLink } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 // Styles
-import 'bulma/css/bulma.css';
+// import 'bulma/css/bulma.css';
 import './HomePage.css';
 // Components
 import { FlatPreview } from '../../cmps/FlatPreview/FlatPreview';

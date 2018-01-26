@@ -64,9 +64,10 @@ function clearUserFromStorage() {
 function toggleLike(user, id) {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            var newUser = JSON.parse(JSON.stringify(user))
-            newUser.likedFlatsIds.push(id);
-            res(newUser);
+            // var newUser = JSON.parse(JSON.stringify(user))
+            console.log(user.likedFlatsIds)
+            // newUser.likedFlatsIds.push(id);
+            res(user);
         }, 1000);
     })
 }

@@ -1,0 +1,6 @@
+.modal .modal-card-body form {
+  display: flex;
+  flex-direction: column; }
+  .modal .modal-card-body form input {
+    width: 40%;
+    margin: 0 auto; }

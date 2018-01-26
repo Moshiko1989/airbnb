@@ -1,5 +1,5 @@
-footer {
+.footer {
   margin: 2vh 2vw;
   box-shadow: 0 -3px 2px -2px #fd5c63; }
-  footer .footer-txt {
+  .footer .footer-txt {
     padding-top: 1vh; }

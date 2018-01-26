@@ -7,7 +7,7 @@ import './Footer.css'
 export const Footer = () => {
 
     return (
-        <footer>
+        <footer className="footer">
             <h2 className="footer-txt">This app is powered by React-Bnb</h2>
         </footer>
         )
