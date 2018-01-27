@@ -1,22 +1,25 @@
 .modal {
-    .modal-card-body {
-        form {
-            display: flex;
-            flex-direction: column;
-
-            input {
-                width: 40%;
-                margin: 0 auto;
+    .modal-card{
+        margin: 30vh auto;
+        .modal-card-body {
+            form {
+                display: flex;
+                flex-direction: column;
+    
+                input {
+                    width: 40%;
+                    margin: 0 auto;
+                }
             }
         }
-    }
-    .modal-card-head{
-        p {
-            column-count: 0;
-            column-gap: 0px;
-            column-rule: 0;
-            // -webkit-column-rule: 0px;
-            text-align: justify;
+        .modal-card-head{
+            p {
+                column-count: 0;
+                column-gap: 0px;
+                column-rule: 0;
+                // -webkit-column-rule: 0px;
+                text-align: justify;
+            }
         }
     }
 }
