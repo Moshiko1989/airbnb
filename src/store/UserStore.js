@@ -20,12 +20,17 @@ class UserStore {
         var idx = this.currUser.likedFlatsIds.indexOf(flatId)
         this.currUser.likedFlatsIds.splice(idx, 1)
         // console.log('removing')
-        console.log(this.currUser)
-        
+        // console.log(this.currUser)
+
     }
 
     @action _addLike = (flatId) => {
         this.currUser.likedFlatsIds.push(flatId)
+        // console.log(this.currUser)
+    }
+
+    @action _addFlat = (bookDetails) => {
+        this.currUser.bookedFlats.push(bookDetails)
         console.log(this.currUser)
     }
 
@@ -57,7 +62,7 @@ class UserStore {
         if (!this.currUser.likedFlatsIds.includes(flatId)) {
             this._addLike(flatId);
             // console.log(this.currUser);
-            UserService.toggleLike(this.currUser, flatId)
+            UserService.updateUser(this.currUser, flatId)
                 .then(user => {
                     this._setUser(user);
                     UserService.saveUser(this.currUser);
@@ -65,12 +70,21 @@ class UserStore {
         } else {
             this._removeLike(flatId);
             // console.log(this.currUser);
-            UserService.toggleLike(this.currUser, flatId)
+            UserService.updateUser(this.currUser)
                 .then(user => {
                     this._setUser(user);
                     UserService.saveUser(this.currUser);
                 });
         }
+
+    }
+    bookFlat = (bookDetails) => {
+        this._addFlat(bookDetails)
+        UserService.updateUser(this.currUser)
+            .then(user => {
+                this._setUser(user);
+                UserService.saveUser(this.currUser);
+            });
     }
 
     _loadUser = autorun(() => {

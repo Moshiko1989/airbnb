@@ -19,7 +19,7 @@ export class FlatPreview extends Component {
         }
 
         console.log(this.props.flat.id);
-        this.props.UserStore.toggleLike(this.props.flat.id);
+        this.props.UserStore.toggleLike(this.props.flat._id);
     }
 
     render() {
@@ -28,7 +28,7 @@ export class FlatPreview extends Component {
         var isFlatLiked = false;
         if (currUser) {
             // console.log(currUser.likedFlatsIds, this.props.flat.id)
-            isFlatLiked = currUser.likedFlatsIds.includes(this.props.flat.id);
+            isFlatLiked = currUser.likedFlatsIds.includes(this.props.flat._id);
             // console.log(isFlatLiked)
         }
 
@@ -45,7 +45,7 @@ export class FlatPreview extends Component {
                             <i className="fa fa-heart-o" aria-hidden="true"></i>
                     }
                 </div>
-                <NavLink to={`/flat/${this.props.flat.id}`}>
+                <NavLink to={`/flat/${this.props.flat._id}`}>
                     <aside className="img-container">
                         <img src={this.props.flat.imgUrl} alt="flat" />
                     </aside>
@@ -59,50 +59,5 @@ export class FlatPreview extends Component {
     }
 }
 
-
-
-
-// // Extentions
-// import React from 'react';
-// import { NavLink } from 'react-router-dom';
-
-// // Styles
-// import 'bulma/css/bulma.css';
-// import './FlatPreview.css';
-// // import UserStore from '../../store/UserStore';
-
-// export const FlatPreview = (props) => {
-
-//     var toggleLike = () => {
-//         if (!props.UserStore.currUserGetter) props.history.push('/login');
-//         console.log(props.flat.id);
-//         props.UserStore.toggleLike(props.flat.id);
-//     }
-
-//     console.log(props.UserStore.currUserGetter, !!props.flat.userLikedIds)
-
-//     return (
-//         <li className="flat-preview">
-//             <div onClick={toggleLike} className="heart">
-//                 {
-//                     // Required changes, when server added!!!!!!!!!!!!!!!!!!!!!
-//                     (props.UserStore.currUserGetter && props.flat.userLikedIds) ?
-//                     <i className="fa fa-heart" aria-hidden="true" ></i>
-//                     :
-//                     <i className="fa fa-heart-o" aria-hidden="true"></i>
-//                 }
-//             </div>
-//             <NavLink to={`/flat/${props.flat.id}`}>
-//                 <aside className="img-container">
-//                     <img src={props.flat.imgUrl} alt="flat" />
-//                 </aside>
-//                 <aside className="flat-txt-container">
-//                     <h2 className="flat-txt">{props.flat.title}</h2>
-//                     <h4 className="flat-txt">{props.flat.address}</h4>
-//                 </aside>
-//             </NavLink>
-//         </li>
-//     )
-// }
 
 

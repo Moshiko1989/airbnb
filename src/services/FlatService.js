@@ -1,8 +1,8 @@
-// import axios from 'axios'
-// let URL = 'http://localhost:3003/data'
-// if (process.env.NODE_ENV !== 'development') {
-//     URL = ''
-// }
+import axios from 'axios'
+let URL = 'http://localhost:3003/data'
+if (process.env.NODE_ENV !== 'development') {
+    URL = ''
+}
 
 const flats = [];
 function generateFlats() {
@@ -31,17 +31,23 @@ function generateFlats() {
 generateFlats()
 
 function getFlats() {
-    return Promise.resolve(flats)
-    // return axios
-    //     .get(URL + '/flat')
-    //     .then(res => res.data)
-    //     .catch(e => {
-    //         throw e;
-    //     });
+    // return Promise.resolve(flats)
+    return axios
+        .get(URL + '/flat')
+        .then(res => res.data)
+        .catch(e => {
+            throw e;
+        });
 }
 
 function getFlatById(id) {
-    return Promise.resolve(flats.find(flat => flat.id === id))
+    // return Promise.resolve(flats.find(flat => flat.id === id))
+    return axios 
+        .get(URL + `/flat/${id}`)
+        .then(res => res.data)
+        .catch(e => {
+            throw e
+        });
 }
 
 export default {

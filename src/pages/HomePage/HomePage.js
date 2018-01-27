@@ -21,7 +21,7 @@ export class HomePage extends Component {
                 <ul>
                     {
                         this.props.FlatStore.flatsGetter.map((flat) => {
-                            return <FlatPreview key={flat.id} flat={flat}
+                            return <FlatPreview key={flat._id} flat={flat}
                                         history={this.props.history}/>                                  
                         })
                     }
