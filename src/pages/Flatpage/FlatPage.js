@@ -11,7 +11,9 @@ import './FlatPage.css'
 @inject('FlatStore', 'UserStore')
 @observer
 export class FlatPage extends Component {
-
+    state = {
+        isModal: false,
+    }
     componentDidMount() {
         var flatId = this.props.match.params.id;
         if (!this.props.FlatStore) return <h1>No content, sorry</h1>
@@ -28,14 +30,25 @@ export class FlatPage extends Component {
     }
 
     openModal = () => {
-       document.querySelector('.modal').style.display = 'block';
+        this.setState({ isModal: true })
+        console.log(this.state);
+        // Why?!?!?!?!?!?!?!?!?!?!?
+        setTimeout(() => {
+            document.querySelector('.modal').style.display = 'block';
+        }, 0)
+        // Not working without setTimeout()...
+        // document.querySelector('.modal').style.display = 'block';
+    }
+    closeModal = () => {
+        this.setState({ isModal: false })
+        
     }
 
     render() {
 
         var flat = this.props.FlatStore.flatGetter;
         if (!flat) return <h1>Sorry, flat is not available</h1>
-        console.log({ flat });
+        // console.log({ flat });
 
         const currUser = this.props.UserStore.currUserGetter
 
@@ -50,7 +63,8 @@ export class FlatPage extends Component {
 
         return (
             <section className="flat-info">
-                <TransactionModal />
+                {this.state.isModal ? <TransactionModal closeModal={this.closeModal}/> : null}
+                {/* <TransactionModal /> */}
                 <div className="img-container">
                     <img className="flat-img" src={flat.imgUrl} alt="flat" />
                     <div onClick={this.toggleLike} className="heart">

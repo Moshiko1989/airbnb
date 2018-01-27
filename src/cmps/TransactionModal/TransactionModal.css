@@ -4,3 +4,9 @@
   .modal .modal-card-body form input {
     width: 40%;
     margin: 0 auto; }
+
+.modal .modal-card-head p {
+  column-count: 0;
+  column-gap: 0px;
+  column-rule: 0;
+  text-align: justify; }

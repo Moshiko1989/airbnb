@@ -10,4 +10,13 @@
             }
         }
     }
+    .modal-card-head{
+        p {
+            column-count: 0;
+            column-gap: 0px;
+            column-rule: 0;
+            // -webkit-column-rule: 0px;
+            text-align: justify;
+        }
+    }
 }
