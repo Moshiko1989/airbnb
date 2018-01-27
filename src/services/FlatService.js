@@ -1,8 +1,8 @@
-// import axios from 'axios'
-// let URL = 'http://localhost:3003/data'
-// if (process.env.NODE_ENV !== 'development') {
-//     URL = ''
-// }
+import axios from 'axios'
+let URL = 'http://localhost:3003/data'
+if (process.env.NODE_ENV !== 'development') {
+    URL = ''
+}
 
 const flats = [];
 function generateFlats() {

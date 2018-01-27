@@ -37,8 +37,7 @@
   .flat-preview a:hover {
     color: black; }
   .flat-preview .heart:hover {
-    font-size: 1.5em;
-    right: 12%; }
+    font-size: 1.3em; }
 
 .flat-preview:hover {
   opacity: .7; }

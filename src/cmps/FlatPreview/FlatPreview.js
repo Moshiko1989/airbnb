@@ -11,15 +11,21 @@ import './FlatPreview.css';
 @observer
 export class FlatPreview extends Component {
 
+    state = {
+        isClicked: true,
+    }
+
     toggleLike = () => {
 
         if (!this.props.UserStore.currUserGetter) {
             this.props.history.push('/login');
             return;
+        } else {
+            setTimeout(() => {
+                console.log(this.props.flat.id);
+                this.props.UserStore.toggleLike(this.props.flat.id);
+            }, 300);
         }
-
-        console.log(this.props.flat.id);
-        this.props.UserStore.toggleLike(this.props.flat.id);
     }
 
     render() {
@@ -35,11 +41,11 @@ export class FlatPreview extends Component {
         // console.log(this.props.flat.userLikedIds)
         return (
             <li className="flat-preview">
-                <div onClick={this.toggleLike} className="heart">
+                <div onClick={this.toggleLike} className='heart'>
                     {
                         // Required changes, when server added!!!!!!!!!!!!!!!!!!!!!
-                        /* (isFlatLiked && this.props.flat.userLikedIds) ? */ 
-                            (isFlatLiked) ?
+                        /* (isFlatLiked && this.props.flat.userLikedIds) ? */
+                        (isFlatLiked) ?
                             <i className="fa fa-heart" aria-hidden="true" ></i>
                             :
                             <i className="fa fa-heart-o" aria-hidden="true"></i>
