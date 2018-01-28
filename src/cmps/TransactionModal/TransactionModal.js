@@ -15,7 +15,6 @@ export class TransactionModal extends Component {
     closeModal = (e) => {
         if (!e.keyCode || e.keyCode === 27) {
             document.querySelector('.modal').style.display = 'none';
-            console.log(e.keyCode)
             this.props.closeModal();
         }
     }
@@ -43,7 +42,8 @@ export class TransactionModal extends Component {
         }
     }
 
-    submitForm = () => {
+    submitForm = (e) => {
+        e.preventDefault()
         if (!this.state.bookStart || !this.state.bookEnd || !this.state.guestCount) {
             console.log('Please fill all fields')
             return;
@@ -68,13 +68,15 @@ export class TransactionModal extends Component {
             console.log('guestCount is not valid');
             return;
         }
+        this.props.bookFlat(this.state)
+        this.closeModal(e);
     }
 
     render() {
         return (
             <div>
                 <div className="modal">
-                    <div className="modal-background"></div>
+                    <div className="modal-background" onClick={this.closeModal}></div>
                     <div className="modal-card">
                         <header className="modal-card-head">
                             <p className="modal-card-title">Book this flat:</p>
@@ -82,13 +84,13 @@ export class TransactionModal extends Component {
                         </header>
                         <section className="modal-card-body">
                             <form onSubmit={(e) => e.preventDefault()}>
-                                <input onChange={this.onInputChange('bookStart')} type="date" />
-                                <input onChange={this.onInputChange('bookEnd')} type="date" />
-                                <input onChange={this.onInputChange('guestCount')} type="number" />
+                                <label>Start: <input onChange={this.onInputChange('bookStart')} type="date" /> </label>
+                                <label>End:  <input onChange={this.onInputChange('bookEnd')} type="date" /> </label>
+                                <label>Guest Count: <input onChange={this.onInputChange('guestCount')} type="number" /> </label>
                             </form>
                         </section>
                         <footer className="modal-card-foot">
-                            <button className="button is-success" onClick={this.submitForm}>Save changes</button>
+                            <button className="button is-success" type="submit" onClick={this.submitForm}>Save changes</button>
                             <button className="button" onClick={this.closeModal}>Cancel</button>
                         </footer>
                     </div>

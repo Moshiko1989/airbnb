@@ -16,6 +16,10 @@ export class FlatPage extends Component {
     }
     componentDidMount() {
         var flatId = this.props.match.params.id;
+        this.setState({flatId}, () => {
+            console.log('id: ', flatId)
+            console.log(' this.state: ', this.state ); 
+        })
         if (!this.props.FlatStore) return <h1>No content, sorry</h1>
         this.props.FlatStore.loadFlatById(flatId)
     }
@@ -25,8 +29,8 @@ export class FlatPage extends Component {
             this.props.history.push('/login');
             return;
         }
-        console.log(this.props.FlatStore.flatGetter.id);
-        this.props.UserStore.toggleLike(this.props.FlatStore.flatGetter.id);
+        console.log(this.props.FlatStore.flatGetter._id);
+        this.props.UserStore.toggleLike(this.props.FlatStore.flatGetter._id);
     }
 
     openModal = () => {
@@ -44,6 +48,13 @@ export class FlatPage extends Component {
         
     }
 
+    bookFlat = (bookDetails) =>{
+        console.log('moshiko',bookDetails)
+        bookDetails.flatId = this.state.flatId
+        console.log('flatid: ', bookDetails.flatId)
+        this.props.UserStore.bookFlat(bookDetails)
+    }
+
     render() {
 
         var flat = this.props.FlatStore.flatGetter;
@@ -55,7 +66,7 @@ export class FlatPage extends Component {
         var isFlatLiked = false;
         if (currUser) {
             // console.log(currUser.likedFlatsIds, this.props.flat.id)
-            isFlatLiked = currUser.likedFlatsIds.includes(flat.id);
+            isFlatLiked = currUser.likedFlatsIds.includes(flat._id);
             // console.log(isFlatLiked)
         }
 
@@ -63,7 +74,7 @@ export class FlatPage extends Component {
 
         return (
             <section className="flat-info">
-                {this.state.isModal ? <TransactionModal closeModal={this.closeModal}/> : null}
+                {this.state.isModal ? <TransactionModal closeModal={this.closeModal} bookFlat={this.bookFlat}/> : null}
                 {/* <TransactionModal /> */}
                 <div className="img-container">
                     <img className="flat-img" src={flat.imgUrl} alt="flat" />
@@ -77,7 +88,8 @@ export class FlatPage extends Component {
                                 <i className="fa fa-heart-o" aria-hidden="true"></i>
                         }
                     </div>
-                    <i className="fa fa-plus" onClick={this.openModal}></i>
+                    {this.props.UserStore.currUserGetter ? <i className="fa fa-plus" onClick={this.openModal}></i> : <i className="fa fa-plus"></i>}
+                    {/* <i className="fa fa-plus" onClick={this.UserStore.currUser ? this.openModal : ''}></i> */}
                 </div>
                 <div>
                     <h1>{flat.title}</h1>

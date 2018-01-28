@@ -3,9 +3,8 @@
 .footer {
     margin: 2vh 2vw;
     box-shadow: 0 -3px 2px -2px $secondary-color;
-    // position: absolute;
-    // bottom: 0;
-    // height: 20px;
+    padding: 0;
+    background-color: white;
 
     .footer-txt {
         padding-top: 1vh;
