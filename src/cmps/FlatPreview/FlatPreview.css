@@ -16,7 +16,8 @@
     .flat-preview .heart .fa {
       position: absolute;
       left: 5%;
-      top: 5%; }
+      top: 5%;
+      border-radius: 50%; }
     .flat-preview .heart .fa-heart {
       color: #fd5c63; }
   .flat-preview a {
@@ -38,6 +39,18 @@
     color: black; }
   .flat-preview .heart:hover {
     font-size: 1.3em; }
+  .flat-preview .liking .fa:after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 3px solid #cc8ef5;
+    padding: 15px;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    animation-name: like; }
 
 .flat-preview:hover {
   opacity: .7; }
