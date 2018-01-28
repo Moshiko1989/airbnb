@@ -9,15 +9,16 @@ import './Login.css'
 export class Login extends Component {
     state = {
         userToLog: {
-            name: '',
-            password: '',
+            username: '',
+            pass: '',
         }
     }
     submit = (e) => {
         e.preventDefault()
-        this.props.UserStore.loadUser(this.state.userToLog)
-        this.props.history.push('/')        
-        
+        this.props.UserStore.loadUser(this.state.userToLog) 
+        .then(res => {
+            this.props.history.push('/') 
+        })      
     }
     onInputChange(field) {
         return (e) => {
@@ -26,16 +27,13 @@ export class Login extends Component {
                 [field]: e.target.value
             }
             this.setState({ userToLog: newUser })
-            // console.log({newUser})
-
         }
     }
     render() {
-        // return <div onChange={this.onInputChange} className="login"><input type="text" placeholder="Name"/></div>
         return (
             <form onSubmit={this.submit} className="login">
-                <input onChange={this.onInputChange('name')} type="text" placeholder="Name" />
-                <input onChange={this.onInputChange('password')} type="password" placeholder="Password" />
+                <input onChange={this.onInputChange('username')} type="text" placeholder="Name" />
+                <input onChange={this.onInputChange('pass')} type="password" placeholder="Password" />
                 <button className="button is-link">Log In</button>
             </form>
         )

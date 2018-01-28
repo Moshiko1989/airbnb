@@ -23,7 +23,7 @@ export class Header extends Component {
                     </div>
                     <h2><pre>React-bnb</pre></h2>
                 </NavLink>
-                <h2 className="welcome"> Welcome {currUser ? currUser.name : ' Guest'}</h2>
+                <h2 className="welcome"> Welcome {currUser ? currUser.username : ' Guest'}</h2>
                 <nav>
                     {!!currUser ?
                         (

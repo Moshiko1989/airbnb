@@ -52,10 +52,15 @@ class UserStore {
     }
 
     loadUser = (credentials) => {
-        console.log('loadUser ran')
-
-        UserService.loadUser(credentials)
-            .then(this._setUser)
+        console.log('loadUser ran',credentials)
+        return UserService.loadUser(credentials)
+            .then(res => {
+                this._setUser(res)
+                return res
+            })
+            .catch(err => {
+                console.log('wrong pass or email')
+            })
     }
 
     toggleLike = (flatId) => {
@@ -88,9 +93,9 @@ class UserStore {
     }
 
     _loadUser = autorun(() => {
-        //  console.log('autorun ran... _loadUser ran')
-        UserService.loadPrevUser()
-            .then(this._setUser)
+        UserService.loadUser()
+            .then(user => this._setUser(user))
+            .catch(console.log('no user'))
     })
 }
 

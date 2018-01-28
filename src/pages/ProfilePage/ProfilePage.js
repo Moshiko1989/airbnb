@@ -15,7 +15,7 @@ export class ProfilePage extends Component {
         if (!currUserGetter) return <div>Sorry, no user yet</div>
         return(
             <section className="profile">
-                <h1>{currUserGetter.name.toUpperCase()} PROFILE</h1>
+                <h1>{currUserGetter.username.toUpperCase()} PROFILE</h1>
                 <div>
                     <h2>Saved listings</h2>
                     { currUserGetter.bookedFlats.map(flat =>{

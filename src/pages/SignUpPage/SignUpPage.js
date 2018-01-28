@@ -56,7 +56,7 @@ export class SignUpPage extends Component {
                 <main>
                 <form className="signup-main" onSubmit={this.signUpUser}>
                    <label> name: <input type="text" placeholder="insert your name"
-                                    value={this.state.newUser.name}
+                                    value={this.state.newUser.username}
                                     onInput={this.onInputChange('name')} />
                     </label>
                    <label> password: <input type="password" placeholder="fill your password" 

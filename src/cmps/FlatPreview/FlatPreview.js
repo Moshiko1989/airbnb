@@ -5,7 +5,6 @@ import { inject, observer } from 'mobx-react';
 // Styles
 import 'bulma/css/bulma.css';
 import './FlatPreview.css';
-// import UserStore from '../../store/UserStore';
 
 @inject('UserStore')
 @observer
@@ -39,7 +38,7 @@ export class FlatPreview extends Component {
         // console.log(this.props.flat.userLikedIds)
         return (
             <li className="flat-preview">
-                <div onClick={this.toggleLike} className={isFlatLiked ? 'heart  liking' : 'heart'}>
+                <div onClick={this.toggleLike} className={isFlatLiked ? 'heart ' : 'heart'}>
                     {
                         // Required changes, when server added!!!!!!!!!!!!!!!!!!!!!
                         /* (isFlatLiked && this.props.flat.userLikedIds) ? */

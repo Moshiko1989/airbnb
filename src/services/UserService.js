@@ -5,29 +5,24 @@ let URL = 'http://localhost:3003'
 if (process.env.NODE_ENV !== 'development') {
     URL = ''
 }
-// import uniqid from 'uniqid'
 
 const STORAGE_KEY = 'user';
 
-function loadPrevUser() {
-    var user = StorageService.load(STORAGE_KEY)
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res(user)
-        }, 250)
-    })
-}
 
 function loadUser(credentials) {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            res({
-                name: 'mock user from server',
-                bookedFlats: [],
-                likedFlatsIds: [],
+    console.log(credentials, 'credentials')
+    if (!credentials) {
+        var user = StorageService.load(STORAGE_KEY)
+        if(user) return new Promise.resolve(user)
+        else return new Promise.reject()
+    } else {
+        return axios.post(`${URL}/login`, credentials)
+            .then((res) => {
+                console.log(res.data.user)
+                return res.data.user
             })
-        }, 250)
-    })
+            .catch(err => { throw err })
+    }
 }
 
 function saveUser(user) {
@@ -39,18 +34,11 @@ function saveUser(user) {
         .catch(e => {
             throw e
         })
-    // return new Promise((res, rej) => {
-    //     StorageService.save(STORAGE_KEY, user)
-    //     setTimeout(() => {
-    //         res(user)
-    //     }, 250)
-    // })
 }
 
 function getEmptyUser() {
     return {
-        // id: 'mock id',
-        name: 'test name',
+        username: '',
         likedFlatsIds: [],
         bookedFlats: [],
         joined: Date.now(),
@@ -62,20 +50,19 @@ function clearUserFromStorage() {
 }
 
 function updateUser(user) {
-    console.log(user._id,'id')
+    console.log(user._id, 'id')
     return axios.put(`${URL}/data/user/${user._id}`, user)
         .then(res => {
             console.log(res.data)
             StorageService.save(STORAGE_KEY, user)
             return res.data
-        }).catch((e) =>{
+        }).catch((e) => {
             throw e;
         })
 }
 
 export default {
     STORAGE_KEY,
-    loadPrevUser,
     loadUser,
     saveUser,
     getEmptyUser,
