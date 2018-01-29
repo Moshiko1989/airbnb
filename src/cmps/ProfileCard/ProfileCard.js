@@ -8,7 +8,7 @@ const ProfileCard = ({ profile ,editUSer, delUser}) => {
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                            <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Placeholder image" />
+                            <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt={profile.username} />
                         </figure>
                     </div>
                     <div className="media-content">
@@ -18,8 +18,8 @@ const ProfileCard = ({ profile ,editUSer, delUser}) => {
                     </div>
                 </div>
                 <footer className="card-footer">
-                    <a href="#" className="card-footer-item" onClick={editUSer}>Edit</a>
-                    <a href="#" className="card-footer-item" onClick={delUser}>Delete</a>
+                    <a  className="card-footer-item" onClick={editUSer}>Edit</a>
+                    <a  className="card-footer-item" onClick={delUser}>Delete</a>
                 </footer>
             </div>
         </section>

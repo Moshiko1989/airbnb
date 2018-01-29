@@ -1,4 +1,4 @@
-import { computed, observable, action, autorun } from 'mobx'
+import { computed, observable, action } from 'mobx'
 import UserService from '../services/UserService'
 import uniqid from 'uniqid'
 

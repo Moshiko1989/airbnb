@@ -2,6 +2,11 @@
   margin: 2vh 2vw;
   box-shadow: 0 -3px 2px -2px #fd5c63;
   padding: 0;
-  background-color: white; }
+  background-color: #d1d1d1;
+  font-size: 1.3em; }
   .footer .footer-txt {
     padding-top: 1vh; }
+  .footer a {
+    color: inherit; }
+  .footer a:hover {
+    color: #fd5c63; }

@@ -8,7 +8,11 @@ export const Footer = () => {
 
     return (
         <footer className="footer">
-            <h2 className="footer-txt">This app is powered by React-Bnb</h2>
+            <p><a href="https://github.com/Moshiko1989/airbnb">
+                <i className="fa fa-github" aria-hidden="true"></i>
+                <span className="footer-txt">Check Out This Project Code</span>
+            </a>
+            </p>
         </footer>
         )
 }

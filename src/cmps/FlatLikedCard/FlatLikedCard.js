@@ -19,6 +19,9 @@ class FlatLikedCard extends Component {
             .then(flat => {
                 this.setState({ flat })
             })
+            .catch(err =>{
+                console.log(err,'no flat');
+            })
     }
 
     render() {
@@ -34,7 +37,7 @@ class FlatLikedCard extends Component {
                     </div>
                         <div className="message-body">
                         <i className="fa fa-heart" aria-hidden="true"></i>
-                            <img src={flat.imgUrl} />
+                            <img src={flat.imgUrl} alt={flat.title}/>
                         </div>
                     </NavLink>
                 </article >

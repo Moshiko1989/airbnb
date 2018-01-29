@@ -19,6 +19,9 @@ class VacationCard extends Component {
             .then(flat => {
                 this.setState({ flat })
             })
+            .catch(err =>{
+                console.log(err,'no flat');
+            })
     }
 
     bookPlace = () => {
@@ -46,7 +49,7 @@ class VacationCard extends Component {
                     <footer className="card-footer">
                         <p className="card-footer-item">
                             <span>
-                                <a href="#" onClick={this.bookPlace}><i className="fa fa-check-circle-o" aria-hidden="true"></i></a>
+                                <a onClick={this.bookPlace}><i className="fa fa-check-circle-o" aria-hidden="true"></i></a>
                             </span>
                         </p>
                         <p className="card-footer-item">
