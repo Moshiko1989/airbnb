@@ -22,19 +22,22 @@
       .flat-info .img-container .heart .fa-heart {
         color: #fd5c63; }
       .flat-info .img-container .heart .fa-heart-o {
-        color: white; }
-    .flat-info .img-container .heart:hover {
-      font-size: 3em;
-      right: 7%;
-      top: 6%;
-      transition: all 200ms; }
+        color: whitesmoke; }
+    .flat-info .img-container .fa-heart-o:hover {
+      transition: all 200ms;
+      color: #fd5c63;
+      text-shadow: -.1vw -.1vw #2c2c2c; }
     .flat-info .img-container .fa-plus {
-      color: white;
+      color: whitesmoke;
       font-size: 4em;
       position: absolute;
       left: 3%;
-      bottom: 5%;
-      cursor: pointer; }
+      bottom: 5%; }
+    .flat-info .img-container .fa-hover:hover {
+      cursor: pointer;
+      color: white;
+      text-shadow: .4vw .4vw #2c2c2c;
+      transition: all 200ms; }
   .flat-info li, .flat-info li > span, .flat-info .align-left {
     text-align: left; }
   .flat-info p {

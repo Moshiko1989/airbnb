@@ -10,11 +10,10 @@ const STORAGE_KEY = 'user';
 
 
 function loadUser(credentials) {
-    console.log(credentials, 'credentials')
     if (!credentials) {
         var user = StorageService.load(STORAGE_KEY)
-        if(user) return new Promise.resolve(user)
-        else return new Promise.reject()
+        if (user || user !== 'null') return  Promise.resolve(user)
+        else return  Promise.reject()
     } else {
         return axios.post(`${URL}/login`, credentials)
             .then((res) => {
@@ -29,6 +28,7 @@ function saveUser(user) {
     return axios.post(`${URL}/data/user`, user)
         .then(res => {
             StorageService.save(STORAGE_KEY, res.data)
+            console.log(res.data,'save user')
             return res.data
         })
         .catch(e => {

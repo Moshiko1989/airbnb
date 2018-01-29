@@ -1,27 +1,34 @@
 import React, { Component } from 'react'
-// import { observable, action, computed , autorun } from 'mobx'
-import FlatCard from '../../cmps/FlatCard/FlatCard'
-
 import {inject , observer} from 'mobx-react'
 
+import ProfileCard from '../../cmps/ProfileCard/ProfileCard.js'
+import VacationCard from '../../cmps/VacationCard/VacationCard.js'
 import './ProfilePage.css';
 
 @inject('UserStore')
 @observer
 export class ProfilePage extends Component {
 
+    delUser = () =>{
+        console.log('deleting')
+    }
+    editUSer = () =>{
+        console.log('editUSer')
+    }
+
     render(){
         const {currUserGetter} = this.props.UserStore
         if (!currUserGetter) return <div>Sorry, no user yet</div>
         return(
-            <section className="profile">
-                <h1>{currUserGetter.username.toUpperCase()} PROFILE</h1>
-                <div>
-                    <h2>Saved listings</h2>
-                    { currUserGetter.bookedFlats.map(flat =>{
-                        return <FlatCard flat={flat}/>
+            <section>
+                <div className="card">
+                    <ProfileCard profile={currUserGetter} delUser={this.delUser} editUSer={this.editUSer} />
+                </div>
+                <div className="vacation-cards">{
+                    currUserGetter.bookedFlats.map(vaction =>{
+                        return  <VacationCard vaction={vaction} key={vaction.vacationId} />
                     })
-                    }
+                }
                 </div>
             </section>
         )

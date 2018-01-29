@@ -35,13 +35,10 @@ export class FlatPage extends Component {
 
     openModal = () => {
         this.setState({ isModal: true })
-        console.log(this.state);
-        // Why?!?!?!?!?!?!?!?!?!?!?
         setTimeout(() => {
             document.querySelector('.modal').style.display = 'block';
         }, 0)
         // Not working without setTimeout()...
-        // document.querySelector('.modal').style.display = 'block';
     }
     closeModal = () => {
         this.setState({ isModal: false })
@@ -65,17 +62,12 @@ export class FlatPage extends Component {
 
         var isFlatLiked = false;
         if (currUser) {
-            // console.log(currUser.likedFlatsIds, this.props.flat.id)
             isFlatLiked = currUser.likedFlatsIds.includes(flat._id);
-            // console.log(isFlatLiked)
         }
-
-        // console.log(this.props.flat.userLikedIds)
 
         return (
             <section className="flat-info">
                 {this.state.isModal ? <TransactionModal closeModal={this.closeModal} bookFlat={this.bookFlat}/> : null}
-                {/* <TransactionModal /> */}
                 <div className="img-container">
                     <img className="flat-img" src={flat.imgUrl} alt="flat" />
                     <div onClick={this.toggleLike} className="heart">
@@ -88,7 +80,7 @@ export class FlatPage extends Component {
                                 <i className="fa fa-heart-o" aria-hidden="true"></i>
                         }
                     </div>
-                    {this.props.UserStore.currUserGetter ? <i className="fa fa-plus" onClick={this.openModal}></i> : <i className="fa fa-plus"></i>}
+                    {this.props.UserStore.currUserGetter ? <i className="fa fa-plus fa-hover" onClick={this.openModal}></i> : <i className="fa fa-plus"></i>}
                     {/* <i className="fa fa-plus" onClick={this.UserStore.currUser ? this.openModal : ''}></i> */}
                 </div>
                 <div>

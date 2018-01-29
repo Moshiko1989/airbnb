@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 import './TransactionModal.css'
 
 export class TransactionModal extends Component {
-    state = {};
+    state = {
+        guestCount: 0,
+    };
 
 
     componentDidMount() {
@@ -84,9 +86,24 @@ export class TransactionModal extends Component {
                         </header>
                         <section className="modal-card-body">
                             <form onSubmit={(e) => e.preventDefault()}>
-                                <label>Start: <input onChange={this.onInputChange('bookStart')} type="date" /> </label>
-                                <label>End:  <input onChange={this.onInputChange('bookEnd')} type="date" /> </label>
-                                <label>Guest Count: <input onChange={this.onInputChange('guestCount')} type="number" /> </label>
+                                <div className="field">
+                                    <label className="label">Vactaion begin: </label>
+                                    <div className="control">
+                                        <input autoFocus onChange={this.onInputChange('bookStart')} type="date" className="input" />
+                                    </div>
+                                </div>
+                                <div className="field">                                
+                                    <label className="label">End: </label>
+                                    <div className="control">                                         
+                                          <input onChange={this.onInputChange('bookEnd')} type="date" className="input" /> 
+                                    </div>
+                                </div>
+                                <div className="field">                                                                
+                                    <label className="label">Guest Count:  </label>
+                                    <div className="control">                                
+                                        <input onChange={this.onInputChange('guestCount')} className="input" type="number" value={this.state.guestCount} />
+                                    </div>
+                                </div>
                             </form>
                         </section>
                         <footer className="modal-card-foot">

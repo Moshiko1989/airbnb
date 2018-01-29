@@ -1,5 +1,6 @@
 import { computed, observable, action, autorun } from 'mobx'
 import UserService from '../services/UserService'
+import uniqid from 'uniqid'
 
 class UserStore {
 
@@ -19,9 +20,10 @@ class UserStore {
     @action _removeLike = (flatId) => {
         var idx = this.currUser.likedFlatsIds.indexOf(flatId)
         this.currUser.likedFlatsIds.splice(idx, 1)
-        // console.log('removing')
-        // console.log(this.currUser)
-
+    }
+    @action _removeBookedFlat = (vacationId) => {
+        var idx = this.currUser.bookedFlats.indexOf(vacationId)
+        this.currUser.bookedFlats.splice(idx, 1)
     }
 
     @action _addLike = (flatId) => {
@@ -70,7 +72,7 @@ class UserStore {
             UserService.updateUser(this.currUser, flatId)
                 .then(user => {
                     this._setUser(user);
-                    UserService.saveUser(this.currUser);
+                    console.log('user updated suscsfuly')
                 });
         } else {
             this._removeLike(flatId);
@@ -78,25 +80,35 @@ class UserStore {
             UserService.updateUser(this.currUser)
                 .then(user => {
                     this._setUser(user);
-                    UserService.saveUser(this.currUser);
+                    console.log('user updated suscsfuly')
                 });
         }
 
     }
     bookFlat = (bookDetails) => {
+        bookDetails.vacationId = uniqid()
         this._addFlat(bookDetails)
         UserService.updateUser(this.currUser)
             .then(user => {
                 this._setUser(user);
-                UserService.saveUser(this.currUser);
+                console.log('user updated suscsfuly')
             });
     }
 
-    _loadUser = autorun(() => {
+    loadUserFromStorage = () => {
         UserService.loadUser()
             .then(user => this._setUser(user))
             .catch(console.log('no user'))
-    })
+    }
+
+    removeBookedFlat = (vacationId)=>{
+        this._removeBookedFlat(vacationId)
+        UserService.updateUser(this.currUser)
+        .then(user => {
+            this._setUser(user);
+            console.log('user updated suscsfuly')
+        });
+    }
 }
 
 

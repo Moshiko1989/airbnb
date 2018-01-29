@@ -26,6 +26,7 @@ import { Footer } from './cmps/Footer/Footer';
 class App extends Component {
   componentDidMount() {
     this.props.FlatStore.loadFlats()
+    this.props.UserStore.loadUserFromStorage()
   }
   render() {
     var tests = this.props.FlatStore.flatsGetter.map(flat => <p>{flat.id}</p>)

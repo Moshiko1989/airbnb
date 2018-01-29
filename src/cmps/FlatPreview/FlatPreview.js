@@ -21,7 +21,7 @@ export class FlatPreview extends Component {
             return;
         } else {
                 console.log(this.props.flat.id);
-                this.props.UserStore.toggleLike(this.props.flat.id);
+                this.props.UserStore.toggleLike(this.props.flat._id);
         }
     }
 

@@ -1,3 +1,8 @@
-.profile {
-    background: red;
+.vacation-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    max-width: 90vw;
+    margin: 0 auto;
+    margin-top: 2vh;
 }

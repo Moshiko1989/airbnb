@@ -31,23 +31,27 @@
             }
 
             .fa-heart-o {
-                color: white;
+            color: whitesmoke;
             }
         
         }
-        .heart:hover {
-            font-size: 3em; 
-            right: 7%;
-            top: 6%;
+        .fa-heart-o:hover {
             transition: all 200ms; 
+            color: $secondary-color;
+            text-shadow: -.1vw -.1vw #2c2c2c;
         }
         .fa-plus {
-            color: white;
+            color: whitesmoke;
             font-size: 4em;
             position: absolute;    
             left: 3%;
             bottom: 5%;    
+        }
+        .fa-hover:hover{
             cursor: pointer;
+            color: white;
+            text-shadow: .4vw .4vw #2c2c2c;
+            transition: all 200ms;             
         }
 
     }

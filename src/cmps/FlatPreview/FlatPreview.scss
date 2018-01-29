@@ -11,11 +11,14 @@ $bubble-r: .5*$bubble-d; // bubble-radius
 
 .flat-preview {
     background-color: white;
-    height: 270px;
+    // height:  480px;
     width: 320px;
     margin: 1%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .heart {
         position: absolute;
@@ -47,8 +50,8 @@ $bubble-r: .5*$bubble-d; // bubble-radius
     .flat-txt-container {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        height: 20%;
+        align-content: stretch;
+        // height: 20%;
 
         .flat-txt {
             overflow: hidden;
@@ -82,4 +85,23 @@ $bubble-r: .5*$bubble-d; // bubble-radius
 }
 .flat-preview:hover {
     opacity: .7;
+}
+
+.card:hover{
+    opacity:1;
+}
+
+.card-footer-item{
+    padding: 0;
+}
+
+.notification{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    top:0;
+    right:0;
+    opacity: .9;
+    transition-duration: .3s;
 }

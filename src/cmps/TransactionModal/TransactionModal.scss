@@ -1,16 +1,8 @@
 .modal {
     .modal-card{
-        margin: 30vh auto;
+        margin: 30vh;
         .modal-card-body {
-            form {
-                display: flex;
-                flex-direction: column;
-    
-                input {
-                    width: 40%;
-                    margin: 0 auto;
-                }
-            }
+           text-align: left;
         }
         .modal-card-head{
             p {
