@@ -31,6 +31,13 @@ export class Header extends Component {
                                 <li>
                                     <NavLink onClick={this.clearUser} to="/"><pre>Log Out</pre></NavLink>
                                 </li>
+                                    {currUser.bookedFlats !== [] || currUser.likedFlatsIds !== [] ?
+                                <li>
+                                    <NavLink to="/profile"><pre><i className="fa fa-shopping-cart" aria-hidden="true"></i></pre></NavLink>
+                                </li>
+                                : 
+                                ''
+                                    }
                                 <li>
                                     <NavLink to="/profile"><pre>Profile</pre></NavLink>
                                 </li>

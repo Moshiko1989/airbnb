@@ -10,7 +10,7 @@ class VacationCard extends Component {
 
     state = {
         flat: null,
-        showBookingModal:false
+        showBookingModal: false
     }
     componentDidMount() {
         var flatId = this.props.vaction.flatId
@@ -21,16 +21,16 @@ class VacationCard extends Component {
             })
     }
 
-    bookPlace = () =>{
-        this.setState({showBookingModal:true});
-        setTimeout(()=>{
-            this.setState({showBookingModal:false});
+    bookPlace = () => {
+        this.setState({ showBookingModal: true });
+        setTimeout(() => {
+            this.setState({ showBookingModal: false });
             this.props.UserStore.removeBookedFlat(this.props.vaction.vacationId)
-        },3000)
+        }, 3000)
     }
     render() {
         const { vaction } = this.props
-        const { flat ,showBookingModal} = this.state
+        const { flat, showBookingModal } = this.state
         return (
             (flat) ?
                 < section className="flat-preview card">
@@ -42,8 +42,6 @@ class VacationCard extends Component {
                     <aside className="flat-txt-container">
                         <p className="flat-txt"><i className="fa fa-user-plus" aria-hidden="true"></i> {vaction.guestCount}</p>
                         <p className="flat-txt"> <i className="fa fa-calendar-o" aria-hidden="true"></i>  {vaction.bookStart.day}/{vaction.bookStart.month} to {vaction.bookEnd.day}/{vaction.bookEnd.month}</p>
-                        {/* <p className="flat-txt">{JSON.stringify(this.state)}</p> */}
-                        {/* <p className="flat-txt">{vaction.bookStart}</p> */}
                     </aside>
                     <footer className="card-footer">
                         <p className="card-footer-item">
@@ -53,25 +51,25 @@ class VacationCard extends Component {
                         </p>
                         <p className="card-footer-item">
                             <span>
-                            <NavLink to={`/flat/${vaction.flatId}`}><i className="fa fa-eye" aria-hidden="true"></i></NavLink>
+                                <NavLink to={`/flat/${vaction.flatId}`}><i className="fa fa-eye" aria-hidden="true"></i></NavLink>
                             </span>
                         </p>
                     </footer>
                     {
                         (showBookingModal) ?
-                    <div className="notification is-link">
-                        <button className="delete"></button>
-                        <i className="fa fa-plane" aria-hidden="true"></i>
-                             <strong>You All Set</strong> , Pack Your Bag
+                            <div className="notification is-link">
+                                <button className="delete"></button>
+                                <i className="fa fa-plane" aria-hidden="true"></i>
+                                <strong>You All Set</strong> , Pack Your Bag
                         </div>
-                        :
-                        ''
+                            :
+                            ''
                     }
                 </section>
                 :
-                <div>
-                    loading
-            </div>
+                <div className="flat-preview card">
+                    <a className="button is-loading">Loading</a>
+                </div>
 
         )
     }

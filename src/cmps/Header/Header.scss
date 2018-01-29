@@ -42,7 +42,7 @@
 
     nav {
         align-self: center;
-
+        
         ul {
             display: flex;
             justify-content: space-between;
@@ -51,8 +51,9 @@
             font-family: $font-family-txt;
             margin: 1vw;
         }
+        
     }
-
+    
 }
 @media screen and (max-width: 540px ) {
         .header {

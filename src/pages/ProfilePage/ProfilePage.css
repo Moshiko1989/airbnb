@@ -1,7 +1,36 @@
-.vacation-cards {
+.profile-page-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 90vw;
-  margin: 0 auto;
-  margin-top: 2vh; }
+  flex-direction: row; }
+  .profile-page-container .profile-page-header {
+    margin: 1vw;
+    margin-top: 3vh;
+    min-width: 300px;
+    height: 200px; }
+  .profile-page-container .vacation-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    margin: 0 auto;
+    margin-top: 2vw; }
+  .profile-page-container .flats-liked-cards {
+    display: flex; }
+  .profile-page-container .profile-page-body {
+    width: 100%; }
+    .profile-page-container .profile-page-body .title {
+      margin-top: 3vh; }
+
+@media screen and (max-width: 1036px) {
+  .profile-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .profile-page-container .profile-page-header {
+      width: 300px;
+      margin-bottom: 3vh; } }
+
+@media screen and (max-width: 750px) {
+  .profile-page-container .flats-liked-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center; } }
