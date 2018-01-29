@@ -1,7 +1,7 @@
 import axios from 'axios'
 let URL = 'http://localhost:3003'
 if (process.env.NODE_ENV !== 'development') {
-    URL = '/'
+    URL = ''
 }
 
 function getFlats() {
